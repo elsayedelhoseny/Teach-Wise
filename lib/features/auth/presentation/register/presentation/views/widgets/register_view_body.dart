@@ -1,0 +1,119 @@
+import 'package:clean_arch_flutter/core/constants/constants.dart';
+import 'package:clean_arch_flutter/core/styles/text_styles.dart';
+import 'package:clean_arch_flutter/core/widgets/default_button.dart';
+import 'package:clean_arch_flutter/core/widgets/default_platform_loading_indicator.dart';
+import 'package:clean_arch_flutter/core/widgets/navigate_finish.dart';
+import 'package:clean_arch_flutter/features/auth/data/data_sources/register_remote_data_source.dart';
+import 'package:clean_arch_flutter/features/auth/data/repos/register_repo_impl.dart';
+import 'package:clean_arch_flutter/features/auth/domain/use_cases/user_rigester_use_case.dart';
+import 'package:clean_arch_flutter/features/auth/presentation/login/presentation/views/login_screen.dart';
+import 'package:clean_arch_flutter/features/auth/presentation/register/presentation/manger/register_cubit/register_cubit.dart';
+import 'package:clean_arch_flutter/features/auth/presentation/register/presentation/manger/register_cubit/register_state.dart';
+import 'package:clean_arch_flutter/features/auth/presentation/register/presentation/views/widgets/register_form_fields.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class RegisterViewBody extends StatelessWidget {
+  final TextEditingController userNameController;
+  final TextEditingController emailController;
+  final TextEditingController mobileController;
+  final TextEditingController passwordController;
+  final GlobalKey<FormState> formKey;
+  final GlobalKey one;
+
+  const RegisterViewBody({
+    super.key,
+    required this.one,
+    required this.emailController,
+    required this.passwordController,
+    required this.formKey,
+    required this.userNameController,
+    required this.mobileController,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => RegisterCubit(UserRigesterUseCase(RigesterRepoImpl(
+          rigesterRemoteDataSource: RigesterRemoteDataSourceImpl()))),
+      child: BlocConsumer<RegisterCubit, RegisterState>(
+        listener: (context, state) async {
+          if (state is RegisterSuccess) {
+            showToast(
+              context: context,
+              text: getLocalizedText(context).registersuccess,
+              color: ToastColors.SUCCESS,
+            );
+          }
+          if (state is RegisterFailure) {
+            showToast(
+              context: context,
+              text: state.error,
+              color: ToastColors.ERROR,
+            );
+          }
+        },
+        builder: (context, state) {
+          return Form(
+            key: formKey,
+            child: Column(
+              children: [
+                RegisterFormFields(
+                  userNameController: userNameController,
+                  mobileController: mobileController,
+                  passwordController: passwordController,
+                  emailController: emailController,
+                ),
+                state is RegisterLoading
+                    ? const PlatformLoadingIndicator()
+                    : Padding(
+                        padding: EdgeInsetsDirectional.only(
+                          top: screenHeight(context, dividedBy: 50),
+                          bottom: screenHeight(context, dividedBy: 40),
+                        ),
+                        child: DefaultButton(
+                          width: double.infinity,
+                          label: getLocalizedText(context).newAccount,
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              context.read<RegisterCubit>().registerLogin(
+                                  email: emailController.text,
+                                  name: userNameController.text,
+                                  phone: mobileController.text,
+                                  password: passwordController.text);
+                            }
+                          },
+                        )),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RegularText(
+                              text: getLocalizedText(context).haveAccount,
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                navigateAndFinish(context, const LoginScreen());
+                              },
+                              child: RegularText(
+                                text: getLocalizedText(context).login,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
