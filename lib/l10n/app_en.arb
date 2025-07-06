@@ -1,0 +1,786 @@
+{
+  "reconnected": "Your internet connection was restored",
+  "@reconnected": {
+    "description": "Your internet connection was restored"
+  },
+  "reconnecting": "Reconnecting ...",
+  "@reconnecting": {
+    "description": "Reconnecting ..."
+  },
+  "checkConnection": "Please check your internet connection",
+  "@checkConnection": {
+    "description": "Please check your internet connection"
+  },
+  "check": "Check",
+  "@check": {
+    "description": "Check"
+  },
+  "pleaseEnterYourCurrentPassword": "pleaseEnterYourCurrentPassword",
+  "@pleaseEnterYourCurrentPassword": {
+    "description": "Please enter your current password"
+  },
+  "pleaseEnterANewPassword": "Please enter a new password",
+  "@pleaseEnterANewPassword": {
+    "description": "Please enter a new password"
+  },
+  "passwordMustBeAtLeast6Characters": "Password must be at least 6 characters",
+  "@passwordMustBeAtLeast6Characters": {
+    "description": "Password must be at least 6 characters"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "yourmessagehassuccessfully": "Your message has successfully been sent, and we will contact you as soon as possible.",
+  "@yourmessagehassuccessfully": {
+    "description": "Your message has successfully been sent, and we will contact you as soon as possible."
+  },
+  "signUp": "SignUp",
+  "@signUp": {
+    "description": "SignUp"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Edit"
+  },
+  "gender": "Gender",
+  "@gender": {
+    "description": "Gender"
+  },
+  "age": "Age",
+  "@age": {
+    "description": "Age"
+  },
+  "viewProfile": "View Profile",
+  "@viewProfile": {
+    "description": "View Profile"
+  },
+  "sendBtn": "Send",
+  "@sendBtn": {
+    "description": "send"
+  },
+  "addBtn": "Add",
+  "@addBtn": {
+    "description": "Add"
+  },
+  "resetBtn": "Reset",
+  "@resetBtn": {
+    "description": "Reset"
+  },
+  "cancelBtn": "Cancel",
+  "@cancelBtn": {
+    "description": "Cancel"
+  },
+  "exitBtn": "Exit",
+  "@exitBtn": {
+    "description": "Exit"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete"
+  },
+  "exitAppWarningQuestion": "Do you wanna exit app ?",
+  "@exitAppWarningQuestion": {
+    "description": "Do you wanna exit app ?"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Reset"
+  },
+  "changPass": "Change password",
+  "@changPass": {
+    "description": "Change password"
+  },
+  "verificationCode": "Verification code",
+  "@verificationCode": {
+    "description": "Verification code"
+  },
+  "requestVerificationCode": "Enter the verification code sent to the mobile number",
+  "@requestVerificationCode": {
+    "description": "Enter the verification code sent to the mobile number"
+  },
+  "verificationFieldEmpty": "This field can't be empty or incomplete",
+  "@verificationFieldEmpty": {
+    "description": "This field can't be empty or incomplete"
+  },
+  "noAccount": "Don't have an account?",
+  "@noAccount": {
+    "description": "Don't have an account?"
+  },
+  "newAccount": "Create a new account",
+  "@newAccount": {
+    "description": "Create a new account"
+  },
+  "haveAccount": "Already have an account?",
+  "@haveAccount": {
+    "description": "Already have an account?"
+  },
+  "forgetPass": "Forget my password !",
+  "@forgetPass": {
+    "description": "Forget my password !"
+  },
+  "userPasswordUpdated": "Your password successfully updated",
+  "@userPasswordUpdated": {
+    "description": "Your password successfully updated"
+  },
+  "userPasswordUpdateFailed": "Failed update your password",
+  "@userPasswordUpdateFailed": {
+    "description": "Failed update your password"
+  },
+  "resetForgottenPass": "Reset your password",
+  "@resetForgottenPass": {
+    "description": "Reset your password"
+  },
+  "requestPhoneNum": "Enter your mobile number to send the verification code",
+  "@requestPhoneNum": {
+    "description": "Enter your mobile number to send the verification code"
+  },
+  "language": "English",
+  "@language": {
+    "description": "The current Language"
+  },
+  "emailFieldEmpty": "Email field can't be empty",
+  "@emailFieldEmpty": {
+    "description": "Email field can't be empty"
+  },
+  "passwordFieldEmpty": "Password field can't be empty",
+  "@passwordFieldEmpty": {
+    "description": "Password field can't be empty"
+  },
+  "newPasswordFieldEmpty": "New password field can't be empty",
+  "@newPasswordFieldEmpty": {
+    "description": "New password field can't be empty"
+  },
+  "confirmPasswordFieldEmpty": "Confirmation field can't be empty",
+  "@confirmPasswordFieldEmpty": {
+    "description": "Confirmation field can't be empty"
+  },
+  "nameFieldEmpty": "User name field can't be empty",
+  "@nameFieldEmpty": {
+    "description": "User name field can't be empty"
+  },
+  "phoneFieldEmpty": "Phone number field can't be empty",
+  "@phoneFieldEmpty": {
+    "description": "Phone number field can't be empty"
+  },
+  "unacceptablePhoneNum": "Please enter a valid phone number",
+  "@unacceptablePhoneNum": {
+    "description": "Please enter a valid phone number"
+  },
+  "wrongPassword": "Doesn't match your new password",
+  "@wrongPassword": {
+    "description": "Doesn't match your new password"
+  },
+  "sameOldPassword": "Sorry, you can't set the same old password",
+  "@sameOldPassword": {
+    "description": "Sorry, you can't set the same old password"
+  },
+  "userWrongPassword": "your password is wrong",
+  "@userWrongPassword": {
+    "description": "your password is wrong"
+  },
+  "username": "username",
+  "@username": {
+    "description": "username"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full Name"
+  },
+  "phone": "Phone Number",
+  "@phone": {
+    "description": "Phone Number"
+  },
+  "country": "country",
+  "@country": {
+    "description": "country"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "birthdate": "Birthdate",
+  "@birthdate": {
+    "description": "Birthdate"
+  },
+  "currentPassword": "Current Password",
+  "@currentPassword": {
+    "description": "Current Password"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "New Password"
+  },
+  "confirmNewPassword": "Confirm New Password",
+  "@confirmNewPassword": {
+    "description": "Confirm New Password"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm Password"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "eightCharacterPassword": "Password must contain at least 8 character, ",
+  "@eightCharacterPassword": {
+    "description": "Password must contain at least 8 character, "
+  },
+  "upperCasePassword": "one uppercase letter, ",
+  "@upperCasePassword": {
+    "description": "one uppercase letter, "
+  },
+  "lowerCasePassword": "one lowercase letter, ",
+  "@lowerCasePassword": {
+    "description": "one lowercase letter, "
+  },
+  "numberPassword": "one number, ",
+  "@numberPassword": {
+    "description": "one number, "
+  },
+  "specialCharacterPassword": "one special character (! @ # $ & * ~ )",
+  "@specialCharacterPassword": {
+    "description": "one special character (! @ # $ & * ~ )"
+  },
+  "pleaseEnterPhoneNum": "Please enter your phone number",
+  "@pleaseEnterPhoneNum": {
+    "description": "Please enter your phone number"
+  },
+  "pleaseEnterEmail": "Please enter your email address",
+  "@pleaseEnterEmail": {
+    "description": "Please enter your email address"
+  },
+  "pleaseEnterPassword": "Please enter your Password",
+  "@pleaseEnterPassword": {
+    "description": "Please enter your Password"
+  },
+  "userName": "please enter your name",
+  "@userName": {
+    "description": "please enter your name"
+  },
+  "registerPassword": "Please create a strong password",
+  "@registerPassword": {
+    "description": "Please create a strong password"
+  },
+  "registerConfirmPass": "Please confirm your password",
+  "@registerConfirmPass": {
+    "description": "Please confirm your password"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip"
+  },
+  "start": "Start",
+  "@start": {
+    "description": "Start"
+  },
+  "signIn": "Sign in",
+  "@signIn": {
+    "description": "Sign in"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile"
+  },
+  "okBtn": "ok",
+  "@okBtn": {
+    "description": "ok"
+  },
+  "changeProfileImage": "Change profile Image",
+   "@changeProfileImage": {
+       "description": "Change profile Image"
+      },
+  "openCamera": "Open camera",
+  "@openCamera": {
+   "description": "Open camera"
+      },
+  "selectFromGallery": "Select from gallery",
+  "@selectFromGallery": {
+    "description": "Select from gallery"
+       },
+  "deleteProfileImage": "Delete profile image",
+  "@deleteProfileImage": {
+     "description": "Delete profile image"
+         },
+  "cancelChangeProfileImage": "Cancel",
+  "@cancelChangeProfileImage": {
+     "description": "Cancel"
+           },
+  "deleteMyAccount": "Delete my account",
+  "@deleteMyAccount": {
+     "description": "Delete my account"
+            },
+  "confirmAccountDeletion": "Are you sure you wanna delete your account and your all data?",
+  "@confirmAccountDeletion": {
+    "description": "Are you sure you wanna delete your account and your all data?"
+             },
+  "signInFirst": "Sorry, you need to sign in first!!",
+  "@signInFirst": {
+    "description": "Sorry, you need to sign in first!!"
+              },
+  "scrollDown": "Scroll down to load more",
+  "@scrollDown": {
+    "description": "Scroll down to load more"
+  },
+  "deleteMyPersonalAccount": "Delete my personal account",
+  "@deleteMyPersonalAccount": {
+    "description": "Delete my personal account"
+  },
+  "modifyPassword": "Modify Password",
+  "@modifyPassword": {
+    "description": "Modify Password"
+  },
+  "dataModified": "Data has been modified",
+  "@dataModified": {
+    "description": "Data has been modified"
+  },
+  "data": "data ",
+  "@data": {
+    "description": "data"
+  },
+  "type": "Type :",
+  "@type": {
+    "description": "Type :"
+  },
+  "modifying": "modify",
+  "@modifying": {
+    "description": "modify"
+  },
+  "male": "male",
+  "@male": {
+    "description": "male"
+  },
+  "female": "female",
+  "@female": {
+    "description": "female"
+  },
+  "onBoardingTitleOne": "Exceptional Shopping Experience",
+  "@onBoardingTitleOne": {
+    "description": "Exceptional Shopping Experience"
+  },
+  "onBoardingTitleTwo": "Order Your Products with Ease",
+  "@onBoardingTitleTwo": {
+    "description": "Order Your Products with Ease"
+  },
+  "onBoardingTitleThree": "Reliable Shipping Service",
+  "@onBoardingTitleThree": {
+    "description": "Reliable Shipping Service"
+  },
+  "onBoardingBodyOne": "The app provides a secure and reliable shopping experience. Secure payment methods are provided, enabling users to confidently and easily complete their purchases.",
+  "@onBoardingBodyOne": {
+    "description": "The app provides a secure and reliable shopping experience. Secure payment methods are provided, enabling users to confidently and easily complete their purchases."
+  },
+  "onBoardingBodyTwo": "The app offers a comprehensive and integrated platform for displaying and selling products and services online.",
+  "@onBoardingBodyTwo": {
+    "description": "The app offers a comprehensive and integrated platform for displaying and selling products and services online."
+  },
+  "onBoardingBodyThree": "The app features an efficient order management system that displays shipping information and order status in real-time.",
+  "@onBoardingBodyThree": {
+    "description": "The app features an efficient order management system that displays shipping information and order status in real-time."
+  },
+  "clothes" : "Clothes",
+  "@clothes": {
+    "description": "clothes"
+  },
+  "shoes" : "Shoes",
+  "@shoes": {
+    "description": "shoes"
+  },
+  "makeup" : "Make up",
+  "@makeup": {
+    "description": "make up"
+  },
+  "children" : "Children",
+  "@children": {
+    "description": "Children"
+  },
+  "accessory" : "Accessory",
+  "@accessory": {
+    "description": "Accessory"
+  },
+  "findyourfavoriteproducts" : "Find your favorite products...",
+  "@findyourfavoriteproducts": {
+    "description": "Find your favorite products..."
+  },
+  "searchanddiscover" : "Search And Discover",
+  "@searchanddiscover": {
+    "description": "Find your favorite products..."
+  },
+  "registerr" : "register",
+  "@registerr": {
+    "description": "Find your favorite products..."
+  },
+  "viewall" : "View all",
+  "@viewall": {
+    "description": "View all"
+  },
+  "floraldress" : "Floral dress",
+  "@floraldress": {
+    "description": "Find your favorite products..."
+  },
+  "categories" : "Categories",
+  "@categories": {
+    "description": "Categories"
+  },
+  "popularproducts" : "Popular Products",
+  "@popularproducts": {
+    "description": "Popular Products"
+  },
+  "hello" : "Hello",
+  "@hello": {
+    "description": "Hello"
+  },
+  "sweatshirts" : "Sweatshirts",
+  "@sweatshirts": {
+    "description": "Sweatshirts"
+  },
+  
+  "pants" : "Pants",
+  "@pants": {
+    "description": "Pants"
+  },
+  "dresses" : "Dresses",
+  "@dresses": {
+    "description": "Dresses"
+  },
+   "athlete" : "Athlete",
+  "@athlete": {
+    "description": "Athlete"
+  },
+   "offers" : "Offers",
+  "@offers": {
+    "description": "offers"
+  },
+  "men" : "Men",
+  "@men": {
+    "description": "Men"
+  },
+   "neww" : "New",
+  "@neww": {
+    "description": "New"
+  },
+   "discount" : "Discount",
+  "@discount": {
+    "description": "Discount"
+  },
+   "pound" : "Pound",
+  "@pound": {
+    "description": "Pound"
+  }, 
+  "sharetheproduct" : "Share the Product",
+  "@sharetheproduct": {
+    "description": "Share the Product"
+  }, 
+  "quantity" : "Quantity",
+  "@quantity": {
+    "description": "Quantity"
+  },
+  "size" : "Size",
+  "@size": {
+    "description": "Size"
+  },
+  "productfeatures" : "Product Features",
+  "@productfeatures": {
+    "description": "Product Features"
+  },
+  "productname" : "Product Name",
+  "@productname": {
+    "description": "Product Name"
+  },
+  "availablecolors" : "Available Colors",
+  "@availablecolors": {
+    "description": "Available Colors"
+  },
+  "material" : "Material",
+  "@material": {
+    "description": "Material"
+  },
+  "productreviews" : "Product Reviews",
+  "@productreviews": {
+    "description": "Product Reviews"
+  },  
+    
+"leaveacomment": "Leave a Comment",
+"@leaveacomment" : { 
+  "description": "Leave a Comment" },
+
+"comments": "Comments",
+"@comments": { "description": "Comments" },
+
+"similarproducts": "Similar Products",
+"@similarproducts": { "description": "Similar Products" },
+
+"more": "More",
+"@more": { "description": "More" },
+"filterproducts": "Filter Products",
+"@filterproducts": { "description": "Filter Products" },
+"brand": "Brand",
+"@brand": { "description": "Brand" },
+"price": "Price",
+"@price": { "description": "Price" },
+"from": "From",
+"@from": { "description": "From" },
+"to": "To",
+"@to": { "description": "To" },
+"clearall": "Clear All",
+"@clearall": { "description": "Clear All" },
+"buying": "Buying",
+"@buying": { "description": "Buying" },
+"favorite": "Favourite",
+"@favorite": { "description": "Favourite" },
+"therearenoproductscurrentlyreserved": "There are no products currently reserved",
+"@therearenoproductscurrentlyreserved": { "description": "There are no products currently reserved" },
+"noproductshavebeenaddedtotheshoppinglistuntilnow": "No products have been added to the shopping list until now",
+"@noproductshavebeenaddedtotheshoppinglistuntilnow": { "description": "No products have been added to the shopping list until now" },
+"cart": "Cart",
+"@cart": { "description": "Cart" },
+"shipping": "Shipping",
+"@shipping": { "description": "Shipping" },
+"totalprice": "Total Price",
+"@totalprice": { "description": "Total Price" },
+"push": "Push",
+"@push": { "description": "Push" },
+"useadiscountcoupon": "Use a Discount Coupon",
+"@useadiscountcoupon": { "description": "Use a Discount Coupon" },
+"enterthediscountcoupon": "Enter the Discount Coupon",
+"@enterthediscountcoupon": { "description": "Enter the Discount Coupon" },
+"addition": "Addition",
+"@addition": { "description": "Addition" },
+"publish": "Publish",
+"@publish": { "description": "Publish" },
+"writewhenyouwant": "Write when you want....",
+"@writewhenyouwant": { "description":  "Write when you want...." },
+"orderdetails": "Order Details",
+"@orderdetails": { "description": "Order Details"},
+"deleteall": "Delete all",
+"@deleteall": { "description": "Delete all"},
+"showmore": "Show More ...",
+"@showmore": { "description": "Show More ..."},
+"settings": "Settings",
+"@settings": { "description": "Settings"},
+"communication": "Communication",
+"@communication": { "description": "communication"},
+"favorites": "Favorites",
+"@favorites": { "description": "Favorites"},
+"orderhistory": "Order History",
+"@orderhistory": { "description": "Order History"},
+"personalpage": "Personal Page",
+"@personalpage": { "description": "Personal Page"},
+"enteryourfullname": "Enter your Full name",
+"@enteryourfullname": { "description": "Enter your Full name"},
+"modifypersonaldata": "Modify Personal Data",
+"@modifypersonaldata": { "description": "modifypersonaldata"},
+"changepassword": "Change Password",
+"@changepassword": { "description": "modifypersonaldata"},
+"modify": "Modify",
+"@modify": { "description": "Modify"},
+"currentpassword": "Current Password",
+"@currentpassword": { "description": "Current Password"},
+"newpassword": "New Password",
+"@newpassword": { "description": "New Password"},
+"thepasswordhasbeenmodifiedsuccessfully": "The password has been modified successfully",
+"@thepasswordhasbeenmodifiedsuccessfully": { "description": "The password has been modified successfully"},
+"thedatahasbeenmodifiedsuccessfully": "The data has been Modified Successfully",
+"@thedatahasbeenmodifiedsuccessfully": { "description": "The password has been modified successfully"},
+"notifications": "Notifications",
+"@notifications": { "description": "Notifications"},
+"connectwithus": "Connect With Us",
+"@connectwithus": { "description": "Connect With Us"},
+"writeyourmessageandwewillcontactyouByemail": "Write your message and We will Contact you By email",
+"@writeyourmessageandwewillcontactyouByemail": { "description": "Write your message and We will Contact you By email"},
+"message": "Message",
+"@message": { "description": "Message"},
+"send": "Send",
+"@send": { "description": "Send"}  ,
+"yes": "yes",
+"@yes": { "description": "yes"}, 
+"nonotifications": "No notifications",
+"@nonotifications": { "description": " No notifications"}   
+,"no": "no",
+"@no": { "description": "no"}  ,
+"noprofiledataavailable": "No Profile data available",
+"@noprofiledataavailable": { "description": "noprofiledataavailable"}  ,
+"doyouwanttologout": "Do you want to logout ?",
+"@doyouwanttologout": { "description": "doyouwanttologout"} ,
+
+
+"howdoyouratethisproduct": "How do you rate this product ?",
+"@howdoyouratethisproduct": { "description": "How do you rate this product ?"},
+
+"didyouforgetyourpassword": "Did you forget your password ?",
+"@didyouforgetyourpassword": { "description": "Did you forget your password ?"} ,
+
+"thatsokayenteryouremail": "That's okay, enter your email",
+"@thatsokayenteryouremail": { "description": "That's okay, enter your email"},
+
+"noInternetconnection": "No Internet connection",
+"@noInternetconnection": { "description": "No Internet connection"},
+
+"checkyourconnection": "Check your connection",
+"@checkyourconnection": { "description": "Check your connection"},
+
+"theme": "Theme",
+"@theme": { "description": "theme"},
+
+"fontsize": "Font Size",
+"@fontsize": { "description": "Font Size"},
+
+"notificationinformation": "Notification information",
+"@notificationinformation": { "description": "Notification information"},
+
+"choosecolor": "Choose Color",
+"@choosecolor": { "description": "Pick Your Color"},
+
+"pickyourcolor": "Pick Your Color",
+"@pickyourcolor": { "description": "Pick Your Color"},
+
+"chooseyourtheme": "Choose your Theme",
+"@chooseyourtheme": { "description": "Choose your Theme"},
+
+"select": "Select",
+"@select": { "description": "Select"},
+
+"backgroundcolor": "Background Color",
+"@backgroundcolor": { "description": "Background Color"},
+
+"fontColor": "Font Color",
+"@fontColor": { "description": "Font Color"},
+
+"reset": "Reset",
+"@reset": { "description": "Reset"},
+
+"dark": "Dark",
+"@dark": { "description": "Dark"},
+
+"drawer": "Drawer",
+"@drawer": { "description": "Drawer"},
+
+"resettodefault": "Reset To Default",
+"@resettodefault": { "description": "resetToDefault"},
+
+"iconscolor": "Icons Color",
+"@iconscolor": { "description": "Icons Color"},
+
+"doyouwanttoexit": "Do you want to Exit?",
+"@doyouwanttoexit": {
+  "description": "Do you want to Exit?"
+},
+"therearenosavedproductscurrently": "There are no saved product scurrently",
+"@therearenosavedproductscurrently": {
+  "description":"There are no saved product scurrently"
+},
+"noproductshavebeenaddedtotheshoppinglist": "No products have been added to the shopping list",
+"@noproductshavebeenaddedtotheshoppinglist": {
+  "description":"No products have been added to the shopping list"
+},
+"moreproducts": "More Products",
+"@moreproducts": {
+  "description": "More Products"
+},
+
+"viewimage": "View Image",
+"@viewimage": {
+  "description": "View Image"
+},
+
+"fromgallery": "Choose from Gallery",
+"@fromgallery": {
+  "description": "Choose from Gallerye"
+},
+"takephoto": "Take Photo",
+"@takephoto": {
+  "description": "Take Photo"
+},
+"cancel": "Cancel",
+"@cancel": {
+  "description": "Cancel"
+},
+
+"notificationhasdeleted": "The notification has been deleted",
+"@notificationhasdeleted": {
+  "description": "notificationhasdeleted"
+},
+
+"clearallnotification": "Clear All Notifications",
+"@clearallnotification": {
+  "description": "clearallnotifications"
+},
+
+"clearallnotifications": "Are you sure you want to clear all notifications",
+"@clearallnotifications": {
+  "description": "Are you sure you want to clear all notifications"
+},
+
+"enteraddress": "Enter Address",
+"@enteraddress": {
+  "description": "Enter Address"
+},
+"enteryouraddress": "Enter your address",
+"@enteryouraddress": {
+  "description": "Enter your address"
+},
+"confirm": "Confirm",
+"@confirm": {
+  "description": "Confirm"
+},
+"removefromcartsuccess": "Product removed from cart successfully!",
+"@removefromcartsuccess": {
+  "description": "Product removed from cart successfully!"
+},
+"addtocartsuccess": "Product added to cart successfully!",
+"@addtocartsuccess": {
+  "description": "Product added to cart successfully!"
+},
+"registersuccess": "Account created successfully!",
+"@registersuccess": {
+  "description": "Account created successfully!"
+},
+"loginsuccess": "Login successful!",
+"@loginsuccess": {
+  "description": "Login successful!"
+},
+"paymentreceipt": "Payment will be made upon receipt",
+"@paymentreceipt": {
+  "description": "Payment will be made upon receipt"
+},
+"confirmpurchase": "Enter the address to confirm your purchase",
+"@confirmpurchase": {
+  "description": "Enter the address to confirm your purchase"
+},
+
+"clickhere": "After entering your data, you can click here",
+"@clickhere": {
+  "description": "After entering your data, you can click here"
+},
+
+"welcometoazraq": "Welcome to Azraq. You can create an account from here",
+"@welcometoazraq": {
+  "description": "Welcome to Azraq. You can create an account from here"
+},
+
+"areyousure": "  Are you sure you want to exit the application?",
+"@areyousure": {
+  "description": "  Are you sure you want to exit the application?"
+}
+
+
+
+
+}
+
+  
+
+
+  
+  
+
+  
