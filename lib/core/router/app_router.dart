@@ -1,5 +1,7 @@
+import 'package:clean_arch_flutter/custom_nav_bar.dart';
 import 'package:clean_arch_flutter/OnboardingScreen.dart';
 import 'package:clean_arch_flutter/c.dart';
+import 'package:clean_arch_flutter/core/widgets/kid_card.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/presentation/views/forgot_password_screen.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/login/presentation/views/login_screen.dart';
 import 'package:clean_arch_flutter/features/home/presentation/views/home_screen.dart';
@@ -12,7 +14,7 @@ class AppRouter {
       case AppRouterNames.rSplashRoute:
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              LoginScrsseen(),
+              HomeScreenssd(),
           transitionDuration: const Duration(milliseconds: 700),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
