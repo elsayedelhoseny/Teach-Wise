@@ -1,5 +1,5 @@
 import 'package:clean_arch_flutter/OnboardingScreen.dart';
-import 'package:clean_arch_flutter/c.dart';
+import 'package:clean_arch_flutter/core/widgets/auth_background_scaffold.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/presentation/views/forgot_password_screen.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/login/presentation/views/login_screen.dart';
 import 'package:clean_arch_flutter/features/home/presentation/views/home_screen.dart';

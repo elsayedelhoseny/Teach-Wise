@@ -1,4 +1,3 @@
-import 'package:clean_arch_flutter/core/widgets/default_button.dart';
 import 'package:clean_arch_flutter/core/widgets/default_platform_loading_indicator.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/presentation/manger/forgot_password_cubit.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/presentation/manger/forgot_password_state.dart';
@@ -53,18 +52,6 @@ class ForgotPasswordViewBody extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: 20),
-                state is LoginLoading
-                    ? const PlatformLoadingIndicator()
-                    : DefaultButton(
-                        label: "Send Reset Link",
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            context
-                                .read<ForgotPasswordCubit>()
-                                .sendResetCode(email: emailController.text);
-                          }
-                        },
-                      )
               ],
             ),
           );

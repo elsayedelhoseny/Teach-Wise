@@ -1,4 +1,3 @@
-import 'package:clean_arch_flutter/core/widgets/default_button.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/verify_code/presentation/manger/verify_code_cubit.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/verify_code/presentation/manger/verify_code_state.dart';
 import 'package:flutter/material.dart';
@@ -65,14 +64,6 @@ class VerifyCodeScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 32),
-                  state is VerifyCodeLoading
-                      ? const CircularProgressIndicator()
-                      : DefaultButton(
-                          label: 'Verify',
-                          onPressed: () {
-                            cubit.verifyCode(email: email, code: '');
-                          },
-                        ),
                   const SizedBox(height: 16),
                   TextButton(
                     onPressed: seconds == 0

@@ -35,11 +35,6 @@ class _ForgotFormFieldsState extends State<ForgotFormFields> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BodyText(
-              text: getLocalizedText(context).email,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
             DefaultFormField(
               controller: widget.emailController,
               hintText: getLocalizedText(context).pleaseEnterEmail,

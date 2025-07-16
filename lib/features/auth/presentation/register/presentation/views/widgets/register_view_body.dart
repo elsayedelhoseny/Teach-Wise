@@ -1,6 +1,4 @@
 import 'package:clean_arch_flutter/core/constants/constants.dart';
-import 'package:clean_arch_flutter/core/styles/text_styles.dart';
-import 'package:clean_arch_flutter/core/widgets/default_button.dart';
 import 'package:clean_arch_flutter/core/widgets/default_platform_loading_indicator.dart';
 import 'package:clean_arch_flutter/core/widgets/navigate_finish.dart';
 import 'package:clean_arch_flutter/features/auth/data/data_sources/register_remote_data_source.dart';
@@ -64,46 +62,13 @@ class RegisterViewBody extends StatelessWidget {
                   passwordController: passwordController,
                   emailController: emailController,
                 ),
-                state is RegisterLoading
-                    ? const PlatformLoadingIndicator()
-                    : Padding(
-                        padding: EdgeInsetsDirectional.only(
-                          top: screenHeight(context, dividedBy: 50),
-                          bottom: screenHeight(context, dividedBy: 40),
-                        ),
-                        child: DefaultButton(
-                          width: double.infinity,
-                          label: getLocalizedText(context).newAccount,
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              context.read<RegisterCubit>().registerLogin(
-                                  email: emailController.text,
-                                  name: userNameController.text,
-                                  phone: mobileController.text,
-                                  password: passwordController.text);
-                            }
-                          },
-                        )),
                 Row(
                   children: [
                     Expanded(
                       child: Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            RegularText(
-                              text: getLocalizedText(context).haveAccount,
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                navigateAndFinish(context, const LoginScreen());
-                              },
-                              child: RegularText(
-                                text: getLocalizedText(context).login,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ],
+                          children: [],
                         ),
                       ),
                     ),

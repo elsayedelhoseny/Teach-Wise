@@ -105,11 +105,6 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BodyText(
-                text: emailTextOfLoginScreen(context),
-                fontWeight: phoneFontWeightOfLoginScreen,
-                fontSize: 18.fs(context),
-              ),
               DefaultFormField(
                 enableSuffix: true,
                 controller: widget.emailController,
@@ -124,7 +119,7 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
                   decoration: const BoxDecoration(
                       border: BorderDirectional(
                           start: BorderSide(
-                    color: AppColor.gray,
+                    color: AppColors.gray,
                     width: 1,
                   ))),
                   child: const Icon(
@@ -134,11 +129,6 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
               ),
               SizedBox(
                 height: screenHeight(context, dividedBy: 50),
-              ),
-              BodyText(
-                text: passwordOfLoginScreen(context),
-                fontWeight: passwordFontWeightOfLoginScreen,
-                fontSize: 18.fs(context),
               ),
               SizedBox(
                 width: passwordFormFieldWidthOfLoginScreen,

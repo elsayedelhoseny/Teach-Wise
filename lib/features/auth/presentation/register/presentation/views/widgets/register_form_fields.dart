@@ -60,7 +60,7 @@ const FontWeight passwordNumberFontWeight = FontWeight.normal;
 const IconData passwordPrefixIcon = Icons.lock;
 
 ///color of hint text
-const Color hintTextColor = AppColor.lightGray;
+const Color hintTextColor = AppColors.gray;
 
 ///font size of hint text
 double hintTextFontSize = 16;
@@ -116,10 +116,6 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: columnMainAxisSize,
             children: [
-              BodyText(
-                text: usernameText(context),
-                fontWeight: usernameFontWeight,
-              ),
               DefaultFormField(
                 enablePrefix: true,
                 prefixIcon: Icons.edit_outlined,
@@ -127,10 +123,6 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                 hintText: usernameHintText(context),
                 keyboard: keyboard,
                 validate: nameValidate(context),
-              ),
-              BodyText(
-                text: phoneNumberText(context),
-                fontWeight: phoneNumberFontWeight,
               ),
               Directionality(
                 textDirection: TextDirection.ltr,
@@ -140,10 +132,6 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                   controller: widget.mobileController,
                   hintText: phoneNumberHintText(context),
                 ),
-              ),
-              BodyText(
-                text: emailtext(context),
-                fontWeight: passwordNumberFontWeight,
               ),
               DefaultFormField(
                 enableSuffix: true,
@@ -159,17 +147,13 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                   decoration: const BoxDecoration(
                       border: BorderDirectional(
                           start: BorderSide(
-                    color: AppColor.gray,
+                    color: AppColors.gray,
                     width: 1,
                   ))),
                   child: const Icon(
                     Icons.email_outlined,
                   ),
                 ),
-              ),
-              BodyText(
-                text: getLocalizedText(context).password,
-                fontWeight: FontWeight.normal,
               ),
               Stack(
                 children: [

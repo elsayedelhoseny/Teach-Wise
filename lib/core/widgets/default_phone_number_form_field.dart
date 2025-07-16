@@ -78,7 +78,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
           ),
           autoValidateMode: AutovalidateMode.onUserInteraction,
           selectorTextStyle: TextStyle(
-              color: AppColor.priceColor,
+              color: AppColors.gray,
               fontSize: 18.w(context),
               height: 1.h(context),
               textBaseline: TextBaseline.ideographic),
@@ -100,7 +100,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                     decoration: BoxDecoration(
                         border: BorderDirectional(
                             end: BorderSide(
-                      color: prefixIconColor ?? AppColor.gray,
+                      color: prefixIconColor ?? AppColors.gray,
                       width: 1,
                     ))),
                     child: Icon(
@@ -112,7 +112,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                 textBaseline: TextBaseline.ideographic,
                 fontSize: 18,
                 fontFamily: 'BalooBhaijaan',
-                color: AppColor.lightGray),
+                color: AppColors.gray),
             label: label != null
                 ? getLocalizedText(context).localeName == 'ar'
                     ? Padding(
@@ -124,7 +124,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                               label!,
                               style: TextStyle(
                                 height: 1,
-                                color: AppColor.priceColor,
+                                color: AppColors.gray,
                                 fontFamily: 'ph-khalid',
                                 fontSize: 20.w(context),
                               ),
@@ -136,7 +136,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                         label!,
                         style: TextStyle(
                           height: 1,
-                          color: AppColor.priceColor,
+                          color: AppColors.gray,
                           fontFamily: 'ph-khalid',
                           fontSize: 22.w(context),
                         ),
@@ -149,7 +149,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                 //       child: const Icon(
                 //         Icons.phone_iphone_rounded,
                 //
-                //   color: AppColor.gray,
+                //   color: AppColors.gray,
                 // ),
                 //     )
                 : IconButton(
@@ -160,11 +160,11 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                     icon: const Icon(
                       Icons.cancel,
                       size: 18,
-                      color: AppColor.gray,
+                      color: AppColors.gray,
                     ),
                   ),
             labelStyle: TextStyle(
-              color: AppColor.priceColor,
+              color: AppColors.gray,
               fontFamily: 'BalooBhaijaan',
               fontSize: 22.w(context),
             ),
@@ -172,19 +172,19 @@ class DefaultPhoneNumFormField extends StatelessWidget {
             fillColor: Colors.transparent,
             border: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: AppColor.gray,
+                color: AppColors.gray,
               ),
               borderRadius: BorderRadius.circular(15.w(context)),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: AppColor.gray,
+                color: AppColors.gray,
               ),
               borderRadius: BorderRadius.circular(15.w(context)),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: AppColor.black,
+                color: AppColors.gray,
               ),
               borderRadius: BorderRadius.circular(15.w(context)),
             ),

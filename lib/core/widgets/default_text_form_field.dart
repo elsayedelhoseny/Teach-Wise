@@ -128,21 +128,21 @@ class DefaultFormField extends StatelessWidget {
                   borderSide: BorderSide(
                       color:
                           // borderColor ??
-                          AppColor.gray,
+                          AppColors.gray,
                       width: borderWidth ?? 1),
                   borderRadius:
                       BorderRadius.circular((radius ?? 15).w(context)),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: borderColor ?? AppColor.gray,
+                      color: borderColor ?? AppColors.gray,
                       width: borderWidth ?? 1),
                   borderRadius:
                       BorderRadius.circular((radius ?? 15).w(context)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: focusBorderColor ?? AppColor.blueTextColor,
+                      color: focusBorderColor ?? AppColors.gray,
                       width: borderWidth ?? 1),
                   borderRadius:
                       BorderRadius.circular((radius ?? 15).w(context)),
@@ -156,7 +156,7 @@ class DefaultFormField extends StatelessWidget {
                 ),
                 labelText: label,
                 labelStyle: TextStyle(
-                  color: AppColor.blueTextColor,
+                  color: AppColors.gray,
                   fontFamily: 'noto',
                   fontSize: getLocalizedText(context).localeName == 'ar'
                       ? 20.w(context)
@@ -172,7 +172,7 @@ class DefaultFormField extends StatelessWidget {
                         decoration: BoxDecoration(
                             border: BorderDirectional(
                                 end: BorderSide(
-                          color: prefixIconColor ?? AppColor.gray,
+                          color: prefixIconColor ?? AppColors.gray,
                           width: 1,
                         ))),
                         child: Icon(
@@ -180,8 +180,8 @@ class DefaultFormField extends StatelessWidget {
                         ),
                       )
                     : noPrefix,
-                prefixIconColor: prefixIconColor ?? AppColor.gray,
-                suffixIconColor: suffixIconColor ?? AppColor.gray,
+                prefixIconColor: prefixIconColor ?? AppColors.gray,
+                suffixIconColor: suffixIconColor ?? AppColors.gray,
                 suffixIcon: enableSuffix
                     ? suffixWidget ??
                         IconButton(
@@ -195,7 +195,7 @@ class DefaultFormField extends StatelessWidget {
                 hintMaxLines: hintMaxLines ?? 1,
                 hintStyle: hintTextStyle ??
                     const TextStyle(
-                      color: AppColor.lightGray,
+                      color: AppColors.gray,
                     ),
                 hintTextDirection: TextDirection.ltr),
             keyboardType: keyboard ?? TextInputType.text,
