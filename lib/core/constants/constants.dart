@@ -6,6 +6,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+bool isDarkMode(BuildContext context) {
+  return Theme.of(context).brightness == Brightness.dark;
+}
+
 String? token;
 String? currentPassword;
 String? email;

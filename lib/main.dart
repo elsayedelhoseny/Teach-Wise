@@ -6,6 +6,7 @@ import 'package:clean_arch_flutter/core/Apis/dioHelper/dio_helper.dart';
 import 'package:clean_arch_flutter/core/cacheHelper/cache_helper.dart';
 import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/router/app_router.dart';
+import 'package:clean_arch_flutter/core/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -64,8 +65,8 @@ class MyApp extends StatelessWidget {
               ],
               locale: delegate.currentLocale,
               supportedLocales: L10n.all,
-              theme: ThemeData.light(),
-              darkTheme: ThemeData.dark(),
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
               themeMode: context.watch<GlobalCubit>().themeMode,
               onGenerateRoute: appRouter.onGenerateRoute,
             ),

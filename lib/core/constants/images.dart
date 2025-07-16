@@ -1,5 +1,8 @@
-class Images {
-  static String ic_student_graduation =
-      'assets/images/student_graduation.png.png';
-  static const String heartNavImage = 'assets/images/heart.png';
-}
+const icStudentIraduation = 'assets/images/student_graduation.png.png';
+const icAdd = 'assets/images/add.png';
+const icProfile = 'assets/images/profile.png';
+const icHome = 'assets/images/home.png';
+const heartNavImage = 'assets/images/heart.png';
+const iclogo = 'assets/images/logo.png';
+const icgraduation = 'assets/images/graduation.png';
+const icfather = 'assets/images/father.png';
