@@ -33,16 +33,16 @@ class DefaultPhoneNumFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultAnimatedBuilder(
       animatedChild: SizedBox(
-        height: height ?? 75.h(context),
+        height: height ?? 75.h(),
         width: double.infinity,
         child: InternationalPhoneNumberInput(
           textAlign: TextAlign.start,
-          spaceBetweenSelectorAndTextField: 5.w(context),
+          spaceBetweenSelectorAndTextField: 5.w(),
           validator: (String? value) {
             if (validatePhoneNumber(value!)) {
-              return getLocalizedText(context).unacceptablePhoneNum;
+              return getLocalizedText().unacceptablePhoneNum;
             } else if (value.isEmpty) {
-              return getLocalizedText(context).phoneFieldEmpty;
+              return getLocalizedText().phoneFieldEmpty;
             }
             return null;
           },
@@ -64,23 +64,23 @@ class DefaultPhoneNumFormField extends StatelessWidget {
             FormFieldCubit.get(context).onChangeState();
           },
           textStyle: TextStyle(
-            height: 2.h(context),
+            height: 2.h(),
             textBaseline: TextBaseline.ideographic,
-            fontSize: 18.w(context),
+            fontSize: 18.w(),
             color: Theme.of(context).colorScheme.primary,
             fontFamily: 'BalooBhaijaan',
           ),
           selectorConfig: SelectorConfig(
             setSelectorButtonAsPrefixIcon: true,
             selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-            leadingPadding: 20.w(context),
+            leadingPadding: 20.w(),
             trailingSpace: false,
           ),
           autoValidateMode: AutovalidateMode.onUserInteraction,
           selectorTextStyle: TextStyle(
               color: AppColors.gray,
-              fontSize: 18.w(context),
-              height: 1.h(context),
+              fontSize: 18.w(),
+              height: 1.h(),
               textBaseline: TextBaseline.ideographic),
           countries: const ['EG', 'SA', 'US'],
           initialValue: PhoneNumber(isoCode: registerCountry),
@@ -88,7 +88,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
           ignoreBlank: false,
           inputDecoration: InputDecoration(
             contentPadding: const EdgeInsetsDirectional.only(end: 10),
-            errorStyle: TextStyle(height: 0.1.h(context)),
+            errorStyle: TextStyle(height: 0.1.h()),
             hintText: hintText,
             hintTextDirection: TextDirection.rtl,
             prefixIcon: enablePrefix
@@ -114,9 +114,9 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                 fontFamily: 'BalooBhaijaan',
                 color: AppColors.gray),
             label: label != null
-                ? getLocalizedText(context).localeName == 'ar'
+                ? getLocalizedText().localeName == 'ar'
                     ? Padding(
-                        padding: EdgeInsetsDirectional.only(end: 10.w(context)),
+                        padding: EdgeInsetsDirectional.only(end: 10.w()),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -126,7 +126,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                                 height: 1,
                                 color: AppColors.gray,
                                 fontFamily: 'ph-khalid',
-                                fontSize: 20.w(context),
+                                fontSize: 20.w(),
                               ),
                             ),
                           ],
@@ -138,14 +138,14 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                           height: 1,
                           color: AppColors.gray,
                           fontFamily: 'ph-khalid',
-                          fontSize: 22.w(context),
+                          fontSize: 22.w(),
                         ),
                       )
                 : null,
             suffixIcon: controller!.text.isEmpty
                 ? null
                 // Padding(
-                //   padding: EdgeInsetsDirectional.only(end: getLocalizedText(context).localeName == 'ar' ? 20.w:0),
+                //   padding: EdgeInsetsDirectional.only(end: getLocalizedText( context).localeName == 'ar' ? 20.w:0),
                 //       child: const Icon(
                 //         Icons.phone_iphone_rounded,
                 //
@@ -166,7 +166,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
             labelStyle: TextStyle(
               color: AppColors.gray,
               fontFamily: 'BalooBhaijaan',
-              fontSize: 22.w(context),
+              fontSize: 22.w(),
             ),
             filled: true,
             fillColor: Colors.transparent,
@@ -174,25 +174,25 @@ class DefaultPhoneNumFormField extends StatelessWidget {
               borderSide: const BorderSide(
                 color: AppColors.gray,
               ),
-              borderRadius: BorderRadius.circular(15.w(context)),
+              borderRadius: BorderRadius.circular(15.w()),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 color: AppColors.gray,
               ),
-              borderRadius: BorderRadius.circular(15.w(context)),
+              borderRadius: BorderRadius.circular(15.w()),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 color: AppColors.gray,
               ),
-              borderRadius: BorderRadius.circular(15.w(context)),
+              borderRadius: BorderRadius.circular(15.w()),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                 color: Colors.red,
               ),
-              borderRadius: BorderRadius.circular(15.w(context)),
+              borderRadius: BorderRadius.circular(15.w()),
             ),
           ),
           keyboardType: TextInputType.number,

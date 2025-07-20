@@ -1,79 +1,82 @@
 import 'dart:math';
-import 'package:flutter/cupertino.dart';
+
+import 'package:clean_arch_flutter/main.dart';
 import 'package:flutter/material.dart';
 
-class Responsive {
-  Responsive({
-    this.designWidth = 428,
-    this.designHeight = 926,
-  });
+import 'constants.dart';
 
+double screenHeight = MediaQuery.sizeOf(navigatorKey.currentContext!).height;
+double screenWidth = MediaQuery.sizeOf(navigatorKey.currentContext!).width;
+const double dWidth = 375;
+const double dHeight = 808;
+
+/// Utility for responsive design in Flutter.
+/// Scales widgets, padding, margins, and font sizes based on the screen size.
+class Responsive {
+  /// The base width and height for your design (e.g., 375x808 for an iPhone design).
   final double designWidth;
   final double designHeight;
 
-  double w(num width, BuildContext context) {
-    final view = View.of(context);
-    return width *
-        (view.physicalSize.width / view.devicePixelRatio / designWidth);
+  const Responsive({
+    this.designWidth = dWidth, // Default design width
+    this.designHeight = dHeight, // Default design height
+  });
+
+  /// Calculate the responsive width based on the design width.
+  double w(
+    double width,
+  ) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return width * (size.width / designWidth);
   }
 
-  double h(num height, BuildContext context) {
-    final view = View.of(context);
-    return height *
-        (view.physicalSize.height / view.devicePixelRatio / designHeight);
+  /// Calculate the responsive height based on the design height.
+  double h(
+    double height,
+  ) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return height * (size.height / designHeight);
   }
 
-  double fs(num size, BuildContext context) {
-    final view = View.of(context);
-    return min(
-      size * (view.physicalSize.height / view.devicePixelRatio / designHeight),
-      size * (view.physicalSize.width / view.devicePixelRatio / designWidth),
-    );
+  /// Calculate the responsive font size based on the smaller screen dimension.
+  double fs(
+    double fontSize,
+  ) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return fontSize * min(size.width / designWidth, size.height / designHeight);
   }
 }
 
+/// Extension on [num] to simplify responsive scaling.
 extension SizeExtension on num {
-  double w(BuildContext context) {
-    final view = View.of(context);
-    final orientation = view.physicalSize.width > view.physicalSize.height
-        ? Orientation.landscape
-        : Orientation.portrait;
-
-    return orientation == Orientation.landscape
-        ? Responsive(designHeight: 428, designWidth: 926).w(this, context)
-        : Responsive().w(this, context);
+  /// Responsive width scaling based on the design dimensions.
+  double w({double designWidth = dWidth}) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return this * (size.width / dWidth);
   }
 
-  Widget verticalSizedBox(
-    BuildContext context,
-  ) {
-    return SizedBox(height: h(context));
+  /// Responsive height scaling based on the design dimensions.
+  double h({double designHeight = dHeight}) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return this * (size.height / designHeight);
   }
 
-  Widget horizontalSizedBox(
-    BuildContext context,
-  ) {
-    return SizedBox(width: w(context));
+  /// Responsive font size scaling based on the smaller dimension.
+  double fs({
+    double designWidth = dWidth,
+    double designHeight = dHeight,
+  }) {
+    final size = MediaQuery.sizeOf(navigatorKey.currentContext ?? mainContext);
+    return this * min(size.width / designWidth, size.height / designHeight);
   }
 
-  double h(BuildContext context) {
-    final view = View.of(context);
-    final orientation = view.physicalSize.width > view.physicalSize.height
-        ? Orientation.landscape
-        : Orientation.portrait;
-
-    return orientation == Orientation.landscape
-        ? Responsive(designHeight: 428, designWidth: 926).h(this, context)
-        : Responsive().h(this, context);
+  /// Vertical [SizedBox] based on responsive height.
+  Widget verticalSB({double designHeight = dHeight}) {
+    return SizedBox(height: h(designHeight: designHeight));
   }
 
-  double fs(BuildContext context) {
-    final view = View.of(context);
-    final orientation = view.physicalSize.width > view.physicalSize.height
-        ? Orientation.landscape
-        : Orientation.portrait;
-    return orientation == Orientation.landscape
-        ? Responsive(designHeight: 428, designWidth: 926).fs(this, context)
-        : Responsive().fs(this, context);
+  /// Horizontal [SizedBox] based on responsive width.
+  Widget horizontalSB({double designWidth = dWidth}) {
+    return SizedBox(width: w(designWidth: designWidth));
   }
 }

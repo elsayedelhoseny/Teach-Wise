@@ -90,25 +90,24 @@ class DefaultFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultAnimatedBuilder(
       animatedChild: Padding(
-        padding: padding ?? EdgeInsets.only(top: 12.h(context)),
+        padding: padding ?? EdgeInsets.only(top: 12.h()),
         child: SizedBox(
-          height: height ?? 75.h(context),
-          width: screenWidth(context),
+          height: height ?? 75.h(),
+          width: screenWidth,
           child: TextFormField(
             autofocus: autofocus,
             focusNode: focusNode,
-            textAlign: getLocalizedText(context).localeName == 'ar'
+            textAlign: getLocalizedText().localeName == 'ar'
                 ? TextAlign.end
                 : TextAlign.start,
             textDirection: TextDirection.ltr,
             style: formTextStyle ??
                 TextStyle(
-                    fontSize: getLocalizedText(context).localeName == 'ar'
-                        ? 20.w(context)
-                        : 18.w(context),
+                    fontSize:
+                        getLocalizedText().localeName == 'ar' ? 20.w() : 18.w(),
                     color: Theme.of(context).colorScheme.primary,
                     fontFamily: 'noto',
-                    height: 2.h(context)),
+                    height: 2.h()),
             validator: validate,
             readOnly: noInput,
             controller: controller,
@@ -118,8 +117,8 @@ class DefaultFormField extends StatelessWidget {
             decoration: InputDecoration(
                 errorMaxLines: 2,
                 errorStyle: TextStyle(
-                  height: errorTextHeight ?? 0.1.h(context),
-                  fontSize: errorTextFontSize ?? 12.w(context),
+                  height: errorTextHeight ?? 0.1.h(),
+                  fontSize: errorTextFontSize ?? 12.w(),
                 ),
                 filled: true,
                 fillColor: fillColor ?? Colors.transparent,
@@ -130,37 +129,32 @@ class DefaultFormField extends StatelessWidget {
                           // borderColor ??
                           AppColors.gray,
                       width: borderWidth ?? 1),
-                  borderRadius:
-                      BorderRadius.circular((radius ?? 15).w(context)),
+                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                       color: borderColor ?? AppColors.gray,
                       width: borderWidth ?? 1),
-                  borderRadius:
-                      BorderRadius.circular((radius ?? 15).w(context)),
+                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                       color: focusBorderColor ?? AppColors.gray,
                       width: borderWidth ?? 1),
-                  borderRadius:
-                      BorderRadius.circular((radius ?? 15).w(context)),
+                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
                     color: Colors.red,
                   ),
-                  borderRadius:
-                      BorderRadius.circular((radius ?? 15).w(context)),
+                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
                 ),
                 labelText: label,
                 labelStyle: TextStyle(
                   color: AppColors.gray,
                   fontFamily: 'noto',
-                  fontSize: getLocalizedText(context).localeName == 'ar'
-                      ? 20.w(context)
-                      : 22.w(context),
+                  fontSize:
+                      getLocalizedText().localeName == 'ar' ? 20.w() : 22.w(),
                 ),
                 alignLabelWithHint: true,
                 prefixIcon: enablePrefix

@@ -25,13 +25,12 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
     return Column(
       children: [
         Container(
-          height: 40.h(context),
-          margin: EdgeInsets.symmetric(horizontal: 32.w(context)),
+          height: 40.h(),
+          margin: EdgeInsets.symmetric(horizontal: 32.w()),
           padding: EdgeInsetsDirectional.symmetric(
-              horizontal: 8.w(context), vertical: 6.h(context)),
+              horizontal: 8.w(), vertical: 6.h()),
           decoration: BoxDecoration(
-            color:
-                isDarkMode(context) ? const Color(0xFF0D1325) : AppColors.gray,
+            color: isDarkMode() ? const Color(0xFF0D1325) : AppColors.gray,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -44,8 +43,8 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
                 onTap: () => setState(() => selectedIndex = index),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
-                  width: 144.w(context),
-                  height: 28.h(context),
+                  width: 144.w(),
+                  height: 28.h(),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -53,16 +52,15 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
                   ),
                   child: Text(
                     widget.tabs[index].title,
-                    style: AppTextStyles.text16Medium(context).copyWith(
-                        color:
-                            isDarkMode(context) ? Colors.white : Colors.black),
+                    style: AppTextStyles.text16Medium().copyWith(
+                        color: isDarkMode() ? Colors.white : Colors.black),
                   ),
                 ),
               );
             }),
           ),
         ),
-        20.verticalSizedBox(context),
+        20.verticalSB(),
         Expanded(
           child: AnimatedSwitcher(
             duration: const Duration(milliseconds: 300),

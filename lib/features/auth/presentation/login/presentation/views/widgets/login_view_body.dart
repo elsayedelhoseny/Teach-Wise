@@ -27,20 +27,8 @@ class LoginViewBody extends StatelessWidget {
           LoginRepoImpl(loginRemoteDataSource: LoginRemoteDataSourceImpl()))),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
-            showToast(
-              context: context,
-              text: getLocalizedText(context).loginsuccess,
-              color: ToastColors.SUCCESS,
-            );
-          }
-          if (state is LoginFailure) {
-            showToast(
-              context: context,
-              text: state.error,
-              color: ToastColors.ERROR,
-            );
-          }
+          if (state is LoginSuccess) {}
+          if (state is LoginFailure) {}
         },
         builder: (context, state) {
           return Form(

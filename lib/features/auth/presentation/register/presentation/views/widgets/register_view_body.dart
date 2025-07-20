@@ -36,20 +36,8 @@ class RegisterViewBody extends StatelessWidget {
           rigesterRemoteDataSource: RigesterRemoteDataSourceImpl()))),
       child: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) async {
-          if (state is RegisterSuccess) {
-            showToast(
-              context: context,
-              text: getLocalizedText(context).registersuccess,
-              color: ToastColors.SUCCESS,
-            );
-          }
-          if (state is RegisterFailure) {
-            showToast(
-              context: context,
-              text: state.error,
-              color: ToastColors.ERROR,
-            );
-          }
+          if (state is RegisterSuccess) {}
+          if (state is RegisterFailure) {}
         },
         builder: (context, state) {
           return Form(

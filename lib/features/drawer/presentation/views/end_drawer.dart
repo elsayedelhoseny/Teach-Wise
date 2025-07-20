@@ -11,16 +11,16 @@ class EndDrawer extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       children: [
         Container(
-          margin: EdgeInsetsDirectional.only(start: 30.w(context)),
-          width: 292.w(context),
+          margin: EdgeInsetsDirectional.only(start: 30.w()),
+          width: 292.w(),
           child: Drawer(
             backgroundColor: Theme.of(context).primaryColor,
             child: const DrawerView(),
           ),
         ),
         PositionedDirectional(
-          top: 30.h(context),
-          start: 5.w(context),
+          top: 30.h(),
+          start: 5.w(),
           child: InkWell(
             onTap: () {
               Navigator.pop(context);

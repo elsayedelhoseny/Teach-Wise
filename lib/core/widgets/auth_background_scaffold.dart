@@ -21,7 +21,7 @@ class AuthBackgroundScaffold extends StatelessWidget {
         children: [
           const _BackgroundGradient(),
           PositionedDirectional(
-            top: 230.h(context),
+            top: 230.h(),
             start: 0,
             end: 0,
             bottom: 0,
@@ -31,7 +31,7 @@ class AuthBackgroundScaffold extends StatelessWidget {
             ),
           ),
           PositionedDirectional(
-            top: 65.h(context),
+            top: 65.h(),
             start: 0,
             end: 0,
             child: _StudentWelcomeImage(),
@@ -49,7 +49,7 @@ class _BackgroundGradient extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: isDarkMode(context)
+        gradient: isDarkMode()
             ? LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -78,7 +78,7 @@ class _BottomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: isDarkMode(context) ? Color(0xff070B16) : Color(0xffFFFFFF),
+        color: isDarkMode() ? Color(0xff070B16) : Color(0xffFFFFFF),
         borderRadius: BorderRadius.vertical(top: Radius.circular(radius)),
         boxShadow: const [
           BoxShadow(
@@ -88,13 +88,7 @@ class _BottomContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(radius)),
-        child: Padding(
-          padding: EdgeInsets.only(top: 50.h(context)),
-          child: child,
-        ),
-      ),
+      child: child,
     );
   }
 }
@@ -106,8 +100,8 @@ class _StudentWelcomeImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'assets/images/student_graduation.png.png',
-      width: 265.w(context),
-      height: 200.h(context),
+      width: 265.w(),
+      height: 200.h(),
     );
   }
 }

@@ -13,9 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 ///////////////////////////controls of register form fields/////////////////////////////
 
 ///text='username'
-String usernameText(context) => getLocalizedText(context).fullName;
-String modifypersonaldata(context) =>
-    getLocalizedText(context).modifypersonaldata;
+String usernameText() => getLocalizedText().areYou;
+String modifypersonaldata() => getLocalizedText().areYou;
 
 ///fontWeight of text='username'
 const FontWeight usernameFontWeight = FontWeight.normal;
@@ -27,31 +26,30 @@ const MainAxisSize columnMainAxisSize = MainAxisSize.min;
 const IconData usernamePrefixIcon = Icons.person;
 
 ///hint text of user name form field ='please enter your name'
-String usernameHintText(context) => getLocalizedText(context).enteryourfullname;
+String usernameHintText() => getLocalizedText().areYou;
 
 ///to make keyboard enter usernames
 TextInputType? keyboard = TextInputType.name;
 
 /// validate function to receive  the name that the user has entered
-String? Function(String?)? nameValidate(context) => (String? value) {
+String? Function(String?)? nameValidate() => (String? value) {
       if (value!.isEmpty) {
-        return getLocalizedText(context).nameFieldEmpty;
+        return getLocalizedText().areYou;
       }
       return null;
     };
 
 ///text='Phone Number'
-String phoneNumberText(context) => getLocalizedText(context).phone;
+String phoneNumberText() => getLocalizedText().areYou;
 
 ///fontWeight of text='Phone Number'
 const FontWeight phoneNumberFontWeight = FontWeight.normal;
 
 ///hint text of phone number form field ='please enter your name'
-String phoneNumberHintText(context) =>
-    getLocalizedText(context).pleaseEnterPhoneNum;
+String phoneNumberHintText() => getLocalizedText().areYou;
 
 ///text= 'Password'
-String emailtext(context) => getLocalizedText(context).email;
+String emailtext() => getLocalizedText().areYou;
 
 ///fontWeight of text='Password'
 const FontWeight passwordNumberFontWeight = FontWeight.normal;
@@ -69,7 +67,7 @@ double hintTextFontSize = 16;
 TextInputType? passwordKeyboard = TextInputType.visiblePassword;
 
 ///hint text of password form field ='please create a strong password'
-String emailHintText(context) => getLocalizedText(context).pleaseEnterEmail;
+String emailHintText(context) => getLocalizedText().areYou;
 
 /// function to change visibility_outlined icon to visibility_off_outlined icon
 void Function() changeVisibility(context) => () {
@@ -77,7 +75,7 @@ void Function() changeVisibility(context) => () {
     };
 
 ///hint text of password form field ='please confirm your password'
-String PasswordHintText(context) => getLocalizedText(context).registerPassword;
+String PasswordHintText(context) => getLocalizedText().areYou;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class RegisterFormFields extends StatefulWidget {
@@ -120,9 +118,9 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                 enablePrefix: true,
                 prefixIcon: Icons.edit_outlined,
                 controller: widget.userNameController,
-                hintText: usernameHintText(context),
+                hintText: usernameHintText(),
                 keyboard: keyboard,
-                validate: nameValidate(context),
+                validate: nameValidate(),
               ),
               Directionality(
                 textDirection: TextDirection.ltr,
@@ -130,7 +128,7 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                   enablePrefix: true,
                   prefixIcon: Icons.work_outlined,
                   controller: widget.mobileController,
-                  hintText: phoneNumberHintText(context),
+                  hintText: phoneNumberHintText(),
                 ),
               ),
               DefaultFormField(
@@ -138,7 +136,7 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                 controller: widget.emailController,
                 hintText: emailHintText(context),
                 keyboard: keyboard,
-                validate: nameValidate(context),
+                validate: nameValidate(),
                 suffixWidget: Container(
                   margin: const EdgeInsetsDirectional.symmetric(
                     vertical: 8,
@@ -180,7 +178,7 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                     },
                     validate: (String? value) {
                       if (value!.isEmpty) {
-                        return getLocalizedText(context).newPasswordFieldEmpty;
+                        return getLocalizedText().areYou;
                       }
                       return null;
                     },
@@ -189,7 +187,7 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                       widget.passwordController.text.isNotEmpty)
                     Positioned(
                       right: 0,
-                      top: 68.h(context),
+                      top: 68.h(),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Row(
@@ -200,7 +198,7 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
                               style: const TextStyle(
                                   color: Colors.red, fontSize: 12),
                             ),
-                            10.horizontalSizedBox(context),
+                            10.horizontalSB(),
                             GestureDetector(
                               onTap: () => PasswordValidator.showPasswordHint(
                                   context, widget.passwordController.text),

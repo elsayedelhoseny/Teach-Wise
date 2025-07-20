@@ -22,8 +22,8 @@ class CircleButton extends StatelessWidget {
     return ClickableAnimation(
       onPressed: onPressed,
       child: Container(
-        height: 64.h(context),
-        width: 64.w(context),
+        height: 64.h(),
+        width: 64.w(),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -37,8 +37,8 @@ class CircleButton extends StatelessWidget {
           blendMode: BlendMode.srcIn,
           child: Image.asset(
             image,
-            width: 28.w(context),
-            height: 28.h(context),
+            width: 28.w(),
+            height: 28.h(),
           ),
         )),
       ),

@@ -55,30 +55,27 @@ class CustomNavBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Container(
-        height: 90.h(context),
+        height: 90.h(),
         decoration: BoxDecoration(
-          color: isDarkMode(context) ? Color(0xFF0F0F23) : Colors.white,
+          color: isDarkMode() ? Color(0xFF0F0F23) : Colors.white,
           borderRadius: BorderRadius.circular(32),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 32.w(context)),
+        padding: EdgeInsets.symmetric(horizontal: 32.w()),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildNavItem(
-              context: context,
               icon: icProfile,
               isSelected: selectedIndex == 0,
               onTap: onUserTap,
             ),
             _buildNavItem(
-              context: context,
               icon: icAdd,
               isSelected: selectedIndex == 1,
               onTap: onAddTap,
               isCenter: true,
             ),
             _buildNavItem(
-              context: context,
               icon: icHome,
               isSelected: selectedIndex == 2,
               onTap: onHomeTap,
@@ -89,12 +86,12 @@ class CustomNavBar extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(
-      {required String icon,
-      required bool isSelected,
-      VoidCallback? onTap,
-      bool isCenter = false,
-      required BuildContext context}) {
+  Widget _buildNavItem({
+    required String icon,
+    required bool isSelected,
+    VoidCallback? onTap,
+    bool isCenter = false,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -119,11 +116,11 @@ class CustomNavBar extends StatelessWidget {
                   : null,
               child: Image.asset(
                 icon,
-                width: 24.w(context),
-                height: 24.h(context),
-                color: isDarkMode(context) ? Colors.white : Colors.black,
+                width: 24.w(),
+                height: 24.h(),
+                color: isDarkMode() ? Colors.white : Colors.black,
               )),
-          14.verticalSizedBox(context),
+          14.verticalSB(),
           _buildIndicator(isSelected)
         ],
       ),
@@ -141,8 +138,8 @@ class CustomNavBar extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-              width: 22,
-              height: 4.4,
+              width: 22.w(),
+              height: 4.4.h(),
               decoration: BoxDecoration(
                 color: Color(0xFF9C27B0),
                 borderRadius: BorderRadius.circular(8),
@@ -152,8 +149,8 @@ class CustomNavBar extends StatelessWidget {
           Positioned(
             top: 2,
             child: Container(
-              width: 12,
-              height: 9,
+              width: 12.w(),
+              height: 9.h(),
               decoration: BoxDecoration(
                 color: Color(0xFF9C27B0),
                 shape: BoxShape.circle,

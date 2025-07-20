@@ -37,11 +37,11 @@ class _ForgotFormFieldsState extends State<ForgotFormFields> {
           children: [
             DefaultFormField(
               controller: widget.emailController,
-              hintText: getLocalizedText(context).pleaseEnterEmail,
+              hintText: getLocalizedText().areYou,
               keyboard: TextInputType.emailAddress,
               validate: (value) {
                 if (value == null || value.isEmpty) {
-                  return getLocalizedText(context).emailFieldEmpty;
+                  return getLocalizedText().areYou;
                 }
                 return null;
               },

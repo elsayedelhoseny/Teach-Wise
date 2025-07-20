@@ -10,8 +10,8 @@ class DrawerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 230.w(context),
-      height: screenHeight(context) - 150.h(context),
+      width: 230.w(),
+      height: screenHeight - 150.h(),
       child: ListView(
         shrinkWrap: true,
         children: [],

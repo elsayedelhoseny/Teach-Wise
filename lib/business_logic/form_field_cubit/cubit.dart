@@ -80,12 +80,14 @@ class FormFieldCubit extends Cubit<FormFieldStates> {
     return false;
   }
 
-  String passwordValidateMsg({required value, required context}) {
-    return '${value.length < 8 ? getLocalizedText(context).eightCharacterPassword : ''}'
-        '${!uppercaseRegex.hasMatch(value) ? getLocalizedText(context).upperCasePassword : ''}'
-        '${!lowercaseRegex.hasMatch(value) ? getLocalizedText(context).lowerCasePassword : ''}'
-        '${!digitRegex.hasMatch(value) ? getLocalizedText(context).numberPassword : ''}'
-        '${!specialCharRegex.hasMatch(value) ? getLocalizedText(context).specialCharacterPassword : ''}';
+  String passwordValidateMsg({
+    required value,
+  }) {
+    return '${value.length < 8 ? getLocalizedText().eightCharacterPassword : ''}'
+        '${!uppercaseRegex.hasMatch(value) ? getLocalizedText().upperCasePassword : ''}'
+        '${!lowercaseRegex.hasMatch(value) ? getLocalizedText().lowerCasePassword : ''}'
+        '${!digitRegex.hasMatch(value) ? getLocalizedText().numberPassword : ''}'
+        '${!specialCharRegex.hasMatch(value) ? getLocalizedText().specialCharacterPassword : ''}';
   }
 
   bool passwordFormError = false;
@@ -108,7 +110,7 @@ class FormFieldCubit extends Cubit<FormFieldStates> {
       }
     }
     if (!isPasswordAsRequested(value: value!, state: state)) {
-      return passwordValidateMsg(context: context, value: value);
+      return passwordValidateMsg(value: value);
     }
     return null;
   }

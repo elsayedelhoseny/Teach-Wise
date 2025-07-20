@@ -1,3 +1,4 @@
+import 'package:clean_arch_flutter/choose_role_screen.dart';
 import 'package:clean_arch_flutter/custom_nav_bar.dart';
 import 'package:clean_arch_flutter/c.dart';
 import 'package:clean_arch_flutter/features/auth/presentation/forgot_password/presentation/views/forgot_password_screen.dart';
@@ -12,7 +13,8 @@ class AppRouter {
     switch (settings.name) {
       case AppRouterNames.rSplashRoute:
         return PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => MainNavBar(),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              LoginScrsseen(),
           transitionDuration: const Duration(milliseconds: 700),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(

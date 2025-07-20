@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 /////////////////////controls of screen//////////////////////////////////
 ///  text ='Phone Number'
-String emailTextOfLoginScreen(context) => getLocalizedText(context).email;
+String emailTextOfLoginScreen(context) => getLocalizedText().areYou;
 
 /// fontWeight of text ='Phone Number'
 const FontWeight phoneFontWeightOfLoginScreen = FontWeight.bold;
@@ -25,10 +25,10 @@ TextEditingController emailControllerOfLoginScreen(widget) =>
 
 /// hintText of PhoneNumFormField ='Please enter your phone number'
 String emailFormFieldHintTextOfLoginScreen(context) =>
-    getLocalizedText(context).pleaseEnterEmail;
+    getLocalizedText().areYou;
 
 ///  text = 'Password'
-String passwordOfLoginScreen(context) => getLocalizedText(context).password;
+String passwordOfLoginScreen(context) => getLocalizedText().areYou;
 
 /// fontWeight of text ='Password'
 const FontWeight passwordFontWeightOfLoginScreen = FontWeight.bold;
@@ -45,7 +45,7 @@ TextEditingController controllerOfPasswordOfLoginScreen(widget) =>
 
 /// hintText of  passwordFormField ='Please enter your password'
 String passwordFormFieldHintTextOfLoginScreen(context) =>
-    getLocalizedText(context).pleaseEnterPassword;
+    getLocalizedText().areYou;
 
 /// to make keyboard enter phone number password
 TextInputType? emailKeyboardOfLoginScreen = TextInputType.emailAddress;
@@ -67,7 +67,7 @@ void Function() changeVisibilityOfLoginScreen(context) => () {
 String? Function(String?)? passValidateOfLoginScreen(context) =>
     (String? value) {
       if (value!.isEmpty) {
-        return getLocalizedText(context).passwordFieldEmpty;
+        return getLocalizedText().areYou;
       }
 
       return null;
@@ -110,7 +110,7 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
                 controller: widget.emailController,
                 hintText: emailHintText(context),
                 keyboard: keyboard,
-                validate: nameValidate(context),
+                validate: nameValidate(),
                 suffixWidget: Container(
                   margin: const EdgeInsetsDirectional.symmetric(
                     vertical: 8,
@@ -128,7 +128,7 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
                 ),
               ),
               SizedBox(
-                height: screenHeight(context, dividedBy: 50),
+                height: screenHeight,
               ),
               SizedBox(
                 width: passwordFormFieldWidthOfLoginScreen,

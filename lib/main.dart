@@ -23,7 +23,7 @@ void main() async {
 
   DioHelper.init();
 
-  final locale = CacheHelper.getData(key: 'language') ?? 'en';
+  final locale = CacheHelper.getData(key: 'language') ?? 'ar';
   token = CacheHelper.getData(key: 'token') ?? '';
 
   delegate = await LocalizationDelegate.create(
@@ -37,6 +37,8 @@ void main() async {
   ));
 }
 
+late BuildContext mainContext;
+
 class MyApp extends StatelessWidget {
   final AppRouter appRouter;
 
@@ -44,6 +46,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mainContext = context;
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -56,6 +60,7 @@ class MyApp extends StatelessWidget {
           return LocalizedApp(
             delegate,
             MaterialApp(
+              navigatorKey: navigatorKey,
               debugShowCheckedModeBanner: false,
               localizationsDelegates: const [
                 AppLocalizations.delegate,

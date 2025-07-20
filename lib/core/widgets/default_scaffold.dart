@@ -53,15 +53,15 @@ class DefaultScaffold extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          getLocalizedText(context).doyouwanttoexit,
+          getLocalizedText().doyouwanttoexit,
         ),
         content: Text(
-          getLocalizedText(context).areyousure,
+          getLocalizedText().areyousure,
         ),
         actions: <Widget>[
           TextButton(
             child: Text(
-              getLocalizedText(context).no,
+              getLocalizedText().no,
             ),
             onPressed: () {
               Navigator.of(context).pop();
@@ -69,7 +69,7 @@ class DefaultScaffold extends StatelessWidget {
           ),
           TextButton(
             child: Text(
-              getLocalizedText(context).yes,
+              getLocalizedText().yes,
             ),
             onPressed: () {
               Future.delayed(const Duration(milliseconds: 200), () {
@@ -173,11 +173,11 @@ class ScaffoldWidget extends StatelessWidget {
                   SliverAppBar(
                     pinned: true,
                     floating: true,
-                    expandedHeight: 60.h(context),
-                    collapsedHeight: 29.h(context),
-                    toolbarHeight: 28.h(context),
+                    expandedHeight: 60.h(),
+                    collapsedHeight: 29.h(),
+                    toolbarHeight: 28.h(),
                     bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(50.h(context)),
+                      preferredSize: Size.fromHeight(50.h()),
                       child: DefaultAppBar(),
                     ),
                   ),
@@ -195,9 +195,9 @@ class ScaffoldWidget extends StatelessWidget {
                               alignment: Alignment.center,
                               transform: Matrix4.identity()
                                 ..setEntry(3, 2, 0.0001)
-                                ..setEntry(0, 3,
-                                    isArab(context) ? 200 * val : -200 * val)
-                                ..rotateY(isArab(context)
+                                ..setEntry(
+                                    0, 3, isArab() ? 200 * val : -200 * val)
+                                ..rotateY(isArab()
                                     ? (pi / 6) * val
                                     : (-pi / 6) * val),
                               child: GestureDetector(
@@ -227,13 +227,13 @@ class ScaffoldWidget extends StatelessWidget {
                               alignment: Alignment.center,
                               transform: Matrix4.identity()
                                 ..setEntry(3, 2, 0.0001)
-                                ..setEntry(0, 3,
-                                    isArab(context) ? 200 * val : -200 * val)
-                                ..rotateY(isArab(context)
+                                ..setEntry(
+                                    0, 3, isArab() ? 200 * val : -200 * val)
+                                ..rotateY(isArab()
                                     ? (pi / 6) * val
                                     : (-pi / 6) * val),
                               child: Align(
-                                alignment: isArab(context)
+                                alignment: isArab()
                                     ? Alignment.centerLeft
                                     : Alignment.centerRight,
                                 child: const DrawerView(),
