@@ -1,114 +1,73 @@
 import 'package:clean_arch_flutter/core/Apis/end_points.dart';
-import 'package:clean_arch_flutter/core/cacheHelper/cache_helper.dart';
-import 'package:clean_arch_flutter/core/constants/constants.dart';
+import 'package:clean_arch_flutter/core/errors/failure.dart';
 import 'package:dio/dio.dart';
 
 class DioHelper {
   static late Dio dio;
 
-  static void init() {
+  static init() {
     dio = Dio(
       BaseOptions(
         baseUrl: EndPoint.baseUrl,
         receiveDataWhenStatusError: true,
-        connectTimeout: const Duration(seconds: 30),
-        receiveTimeout: const Duration(seconds: 30),
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'lang': 'ar',
-          'Authorization': CacheHelper.getData(key: EndPoint.token) ?? '',
         },
       ),
-    );
-
-    dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) {
-        final token = CacheHelper.getData(key: EndPoint.token);
-        if (token != null) {
-          options.headers['Authorization'] = token;
-        }
-        return handler.next(options);
-      },
-      onResponse: (response, handler) {
-        return handler.next(response);
-      },
-      onError: (DioException error, handler) {
-        if (error.response != null && error.response?.data != null) {
-          errorResponse = error.response!.data['message'];
-          print('Error Message: $errorResponse');
-        }
-        if (error.type == DioExceptionType.connectionTimeout ||
-            error.type == DioExceptionType.receiveTimeout) {}
-        return handler.next(error);
-      },
-    ));
-  }
-
-  static Future<Response> getData({
-    required String url,
-    Map<String, dynamic>? query,
-    CancelToken? cancelToken,
-  }) async {
-    return await dio.get(
-      url,
-      queryParameters: query,
-      cancelToken: cancelToken,
     );
   }
 
   static Future<Response> postData({
     required String url,
-    required Map<String, dynamic> requestedBody,
+    Map<String, dynamic>? data,
     Map<String, dynamic>? query,
-    CancelToken? cancelToken,
+    Map<String, String>? headers,
   }) async {
-    return await dio.post(
-      url,
-      data: requestedBody,
-      queryParameters: query,
-      cancelToken: cancelToken,
-    );
+    try {
+      dio.options.headers.addAll(headers ?? {});
+      return await dio.post(
+        url,
+        queryParameters: query,
+        data: data,
+      );
+    } on DioException catch (e) {
+      throw ServerFailure.fromDiorError(e);
+    }
+  }
+
+  static Future<Response> getData({
+    required String url,
+    Map<String, dynamic>? query,
+    Map<String, String>? headers,
+  }) async {
+    try {
+      dio.options.headers.addAll(headers ?? {});
+      return await dio.get(
+        url,
+        queryParameters: query,
+      );
+    } on DioException catch (e) {
+      throw ServerFailure.fromDiorError(e);
+    }
   }
 
   static Future<Response> putData({
     required String url,
-    required Map<String, dynamic> requestedBody,
-    Map<String, dynamic>? query,
-    CancelToken? cancelToken,
-  }) async {
-    return await dio.put(
-      url,
-      data: requestedBody,
-      queryParameters: query,
-      cancelToken: cancelToken,
-    );
-  }
-
-  static Future<Response> deleteData({
-    required String url,
     Map<String, dynamic>? data,
-    CancelToken? cancelToken,
+    Map<String, dynamic>? query,
+    Map<String, String>? headers,
   }) async {
-    return await dio.delete(
-      url,
-      data: data,
-      cancelToken: cancelToken,
-    );
-  }
-
-  static Future<Response> uploadImage({
-    required String url,
-    required String imagePath,
-    CancelToken? cancelToken,
-  }) async {
-    FormData formData = FormData.fromMap({
-      'image': await MultipartFile.fromFile(imagePath),
-    });
-    return await dio.patch(
-      url,
-      data: formData,
-      cancelToken: cancelToken,
-    );
+    try {
+      dio.options.headers.addAll(headers ?? {});
+      return await dio.put(
+        url,
+        queryParameters: query,
+        data: data,
+      );
+    } on DioException catch (e) {
+      throw ServerFailure.fromDiorError(e);
+    }
   }
 }

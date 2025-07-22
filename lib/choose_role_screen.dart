@@ -19,7 +19,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
   @override
   Widget build(BuildContext context) {
     return AuthBackgroundScaffold(
-      child: Column(
+      body: Column(
         children: [
           QuestionTitle(),
           SizedBox(height: 87.h()),

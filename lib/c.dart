@@ -1,16 +1,4 @@
-import 'package:clean_arch_flutter/core/constants/lists.dart';
-import 'package:clean_arch_flutter/core/constants/responsive.dart';
-import 'package:clean_arch_flutter/core/widgets/ImageUploaderBox.dart';
-import 'package:clean_arch_flutter/core/widgets/auth_background_scaffold.dart';
-import 'package:clean_arch_flutter/core/widgets/profile_card_option.dart';
 import 'package:clean_arch_flutter/core/widgets/teacher_card.dart';
-import 'package:clean_arch_flutter/features/Home/presentation/views/home_screen.dart';
-import 'package:clean_arch_flutter/features/auth/presentation/login/presentation/views/login_screen.dart';
-import 'package:clean_arch_flutter/features/auth/presentation/register/presentation/views/register_screen.dart';
-import 'package:flutter/material.dart';
-
-import 'core/widgets/custom_tab_switcher.dart';
-
 import 'package:flutter/material.dart';
 
 // تأكد من استيراد TeacherCard هنا
@@ -49,19 +37,6 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('تفاصيل المدرس')),
       body: const Center(child: Text("محتوى صفحة التفاصيل")),
-    );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AuthBackgroundScaffold(
-      child: CustomTabSwitcher(
-        tabs: tabs,
-      ),
     );
   }
 }

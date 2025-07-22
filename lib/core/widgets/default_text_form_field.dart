@@ -1,8 +1,9 @@
+import 'package:clean_arch_flutter/core/styles/app_text_styles.dart';
+import 'package:flutter/material.dart';
 import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/styles/colors.dart';
 import 'package:clean_arch_flutter/core/widgets/animated_widget.dart';
-import 'package:flutter/material.dart';
 
 class DefaultFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -89,11 +90,9 @@ class DefaultFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultAnimatedBuilder(
-      animatedChild: Padding(
-        padding: padding ?? EdgeInsets.only(top: 12.h()),
-        child: SizedBox(
-          height: height ?? 75.h(),
-          width: screenWidth,
+      animatedChild: SizedBox(
+        height: height ?? 38.h(),
+        child: Center(
           child: TextFormField(
             autofocus: autofocus,
             focusNode: focusNode,
@@ -102,12 +101,11 @@ class DefaultFormField extends StatelessWidget {
                 : TextAlign.start,
             textDirection: TextDirection.ltr,
             style: formTextStyle ??
-                TextStyle(
-                    fontSize:
-                        getLocalizedText().localeName == 'ar' ? 20.w() : 18.w(),
-                    color: Theme.of(context).colorScheme.primary,
-                    fontFamily: 'noto',
-                    height: 2.h()),
+                AppTextStyles.text16Regular(
+                  color: isDarkMode()
+                      ? AppColors.darkTextPrimary
+                      : AppColors.textPrimary,
+                ),
             validator: validate,
             readOnly: noInput,
             controller: controller,
@@ -115,83 +113,105 @@ class DefaultFormField extends StatelessWidget {
             autovalidateMode:
                 autoValidator ?? AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
-                errorMaxLines: 2,
-                errorStyle: TextStyle(
-                  height: errorTextHeight ?? 0.1.h(),
-                  fontSize: errorTextFontSize ?? 12.w(),
+              errorMaxLines: 2,
+              errorStyle: TextStyle(
+                height: errorTextHeight ?? 0.1.h(),
+                fontSize: errorTextFontSize ?? 12.w(),
+              ),
+              filled: true,
+              fillColor: (isDarkMode()
+                  ? AppColors.fillColorDark
+                  : AppColors.fillColor),
+              contentPadding: const EdgeInsetsDirectional.only(start: 10),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: borderColor ??
+                      (isDarkMode() ? AppColors.darkBorder : AppColors.border),
+                  width: borderWidth ?? 1,
                 ),
-                filled: true,
-                fillColor: fillColor ?? Colors.transparent,
-                contentPadding: const EdgeInsetsDirectional.only(start: 10),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color:
-                          // borderColor ??
-                          AppColors.gray,
-                      width: borderWidth ?? 1),
-                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
+                borderRadius: BorderRadius.circular((radius ?? 12).w()),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: borderColor ??
+                      (isDarkMode() ? AppColors.darkBorder : AppColors.border),
+                  width: borderWidth ?? 1,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: borderColor ?? AppColors.gray,
-                      width: borderWidth ?? 1),
-                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
+                borderRadius: BorderRadius.circular((radius ?? 12).w()),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: focusBorderColor ??
+                      (isDarkMode()
+                          ? AppColors.darkPrimary
+                          : AppColors.primary),
+                  width: borderWidth ?? 1,
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: focusBorderColor ?? AppColors.gray,
-                      width: borderWidth ?? 1),
-                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
+                borderRadius: BorderRadius.circular((radius ?? 15).w()),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Colors.red,
                 ),
-                errorBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.red,
-                  ),
-                  borderRadius: BorderRadius.circular((radius ?? 15).w()),
-                ),
-                labelText: label,
-                labelStyle: TextStyle(
-                  color: AppColors.gray,
-                  fontFamily: 'noto',
-                  fontSize:
-                      getLocalizedText().localeName == 'ar' ? 20.w() : 22.w(),
-                ),
-                alignLabelWithHint: true,
-                prefixIcon: enablePrefix
-                    ? Container(
-                        margin: const EdgeInsetsDirectional.symmetric(
-                          vertical: 8,
-                          horizontal: 5,
-                        ),
-                        decoration: BoxDecoration(
-                            border: BorderDirectional(
-                                end: BorderSide(
-                          color: prefixIconColor ?? AppColors.gray,
-                          width: 1,
-                        ))),
-                        child: Icon(
-                          prefixIcon,
-                        ),
-                      )
-                    : noPrefix,
-                prefixIconColor: prefixIconColor ?? AppColors.gray,
-                suffixIconColor: suffixIconColor ?? AppColors.gray,
-                suffixIcon: enableSuffix
-                    ? suffixWidget ??
-                        IconButton(
-                          icon: Icon(
-                            suffixIcon,
+                borderRadius: BorderRadius.circular((radius ?? 15).w()),
+              ),
+              labelText: label,
+              labelStyle: TextStyle(
+                color: isDarkMode()
+                    ? AppColors.darkTextSecondary
+                    : AppColors.textSecondary,
+                fontFamily: 'noto',
+                fontSize:
+                    getLocalizedText().localeName == 'ar' ? 20.w() : 22.w(),
+              ),
+              alignLabelWithHint: true,
+              prefixIcon: enablePrefix
+                  ? Container(
+                      margin: const EdgeInsetsDirectional.symmetric(
+                        vertical: 8,
+                        horizontal: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        border: BorderDirectional(
+                          end: BorderSide(
+                            color: prefixIconColor ??
+                                (isDarkMode()
+                                    ? AppColors.darkTextSecondary
+                                    : AppColors.textSecondary),
+                            width: 1,
                           ),
-                          onPressed: suffixPressed,
-                        )
-                    : noSuffix,
-                hintText: hintText,
-                hintMaxLines: hintMaxLines ?? 1,
-                hintStyle: hintTextStyle ??
-                    const TextStyle(
-                      color: AppColors.gray,
-                    ),
-                hintTextDirection: TextDirection.ltr),
+                        ),
+                      ),
+                      child: Icon(
+                        prefixIcon,
+                      ),
+                    )
+                  : noPrefix,
+              prefixIconColor: prefixIconColor ??
+                  (isDarkMode()
+                      ? AppColors.darkTextSecondary
+                      : AppColors.textSecondary),
+              suffixIconColor: suffixIconColor ??
+                  (isDarkMode()
+                      ? AppColors.darkTextSecondary
+                      : AppColors.textSecondary),
+              suffixIcon: enableSuffix
+                  ? suffixWidget ??
+                      IconButton(
+                        icon: Icon(suffixIcon),
+                        onPressed: suffixPressed,
+                      )
+                  : noSuffix,
+              hintText: hintText,
+              hintMaxLines: hintMaxLines ?? 1,
+              hintStyle: hintTextStyle ??
+                  AppTextStyles.text14Regular(
+                    color: isDarkMode()
+                        ? AppColors.darkTextSecondary
+                        : AppColors.textSecondary,
+                  ),
+              hintTextDirection: TextDirection.ltr,
+            ),
             keyboardType: keyboard ?? TextInputType.text,
             obscureText: isPassword,
             onTapOutside: onTapOutside ??

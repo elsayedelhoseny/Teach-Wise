@@ -37,12 +37,13 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(widget.tabs.length, (index) {
-              final isSelected = selectedIndex == index;
+              final reversedIndex = widget.tabs.length - 1 - index;
+              final isSelected = selectedIndex == reversedIndex;
 
               return GestureDetector(
-                onTap: () => setState(() => selectedIndex = index),
+                onTap: () => setState(() => selectedIndex = reversedIndex),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: const Duration(milliseconds: 100),
                   width: 144.w(),
                   height: 28.h(),
                   alignment: Alignment.center,
@@ -51,7 +52,7 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
                     gradient: isSelected ? AppColors.buttonGradient : null,
                   ),
                   child: Text(
-                    widget.tabs[index].title,
+                    widget.tabs[reversedIndex].title,
                     style: AppTextStyles.text16Medium().copyWith(
                         color: isDarkMode() ? Colors.white : Colors.black),
                   ),

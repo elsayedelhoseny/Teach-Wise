@@ -3,7 +3,7 @@ import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/constants/images.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/styles/colors.dart';
-import 'package:clean_arch_flutter/features/Home/presentation/views/home_screen.dart';
+import 'package:clean_arch_flutter/parent_layout/features/Home/presentation/views/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainNavBar extends StatefulWidget {

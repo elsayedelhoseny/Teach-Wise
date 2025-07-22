@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 class AuthBackgroundScaffold extends StatelessWidget {
   const AuthBackgroundScaffold({
     super.key,
-    required this.child,
+    required this.body,
     this.topRadius = 32,
   });
 
-  final Widget child;
+  final Widget body;
   final double topRadius;
 
   @override
@@ -27,7 +27,7 @@ class AuthBackgroundScaffold extends StatelessWidget {
             bottom: 0,
             child: _BottomContainer(
               radius: topRadius,
-              child: child,
+              child: body,
             ),
           ),
           PositionedDirectional(

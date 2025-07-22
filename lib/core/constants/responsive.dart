@@ -8,7 +8,7 @@ import 'constants.dart';
 double screenHeight = MediaQuery.sizeOf(navigatorKey.currentContext!).height;
 double screenWidth = MediaQuery.sizeOf(navigatorKey.currentContext!).width;
 const double dWidth = 375;
-const double dHeight = 808;
+const double dHeight = 812;
 
 /// Utility for responsive design in Flutter.
 /// Scales widgets, padding, margins, and font sizes based on the screen size.

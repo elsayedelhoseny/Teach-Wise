@@ -17,7 +17,7 @@ abstract class AppColors {
 
   static const Color border = Color(0xFFE0E0E0);
   static const Color inputBackground = Color(0xFFF3E6F5);
-
+  static const Color fillColor = Color(0xFFFAFAFA);
   static const Color success = Color(0xFF4CAF50);
   static const Color warning = Color(0xFFFFC107);
   static const Color error = Color(0xFFF44336);
@@ -35,11 +35,11 @@ abstract class AppColors {
   static const Color darkTextSecondary = Color(0xFFB0BEC5);
 
   static const Color darkBorder = Color(0xFF3C3C4E);
-  static const Color darkInputBackground = Color(0xFF2A293D);
+  static const Color darkInputBackground = Color(0xFF070B16);
 
   static const Color darkGradientStart = Color(0xFF4A0072);
   static const Color darkGradientEnd = Color(0xFF12005E);
-
+  static const Color fillColorDark = Color.fromRGBO(255, 255, 255, 0.04);
   static const Color darkSuccess = Color(0xFF66BB6A);
   static const Color darkWarning = Color(0xFFFFCA28);
   static const Color darkError = Color(0xFFEF5350);
