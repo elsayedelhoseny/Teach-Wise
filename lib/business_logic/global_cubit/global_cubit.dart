@@ -1,9 +1,6 @@
 import 'package:clean_arch_flutter/core/cacheHelper/cache_helper.dart';
-import 'package:clean_arch_flutter/main.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'global_state.dart';
 import 'package:intl/intl.dart';
 
@@ -20,51 +17,31 @@ class GlobalCubit extends Cubit<GlobalStates> {
 
   void initVoid() {
     emit(InitializingState());
-    lang = CacheHelper.getData(key: 'language') ?? 'en';
+    lang = CacheHelper.getData(key: 'language') ?? 'ar';
     themeMode = CacheHelper.getData(key: 'isDarkMode') ?? false
         ? ThemeMode.dark
         : ThemeMode.light;
+    languageDropdownSelectedItem = lang == 'en' ? 'English' : 'عربي';
     Intl.defaultLocale = lang;
-    delegate.onLocaleChanged = (Locale value) async {
-      try {
-        Intl.defaultLocale = value.languageCode;
-        lang = value.languageCode;
-        languageDropdownSelectedItem = lang == 'en' ? 'English' : 'عربي';
-      } catch (e) {
-        if (kDebugMode) {
-          print('translation error :====> ${e.toString()}');
-        }
-      }
-    };
+    emit(ChangeLangState());
   }
 
-  Future<void> changeLang(context) async {
-    if (AppLocalizations.of(context)!.localeName == 'en') {
-      await delegate.changeLocale(const Locale('ar')).then((value) {
-        CacheHelper.saveData(key: 'language', value: "ar");
-        emit(ChangeLangState());
-      }).catchError((error) {
-        emit(ErrorChangeLangState());
-        print('error is ${error.toString()}');
-      });
-    } else {
-      await delegate.changeLocale(const Locale('en')).then((value) {
-        CacheHelper.saveData(key: 'language', value: "en");
-        emit(ChangeLangState());
-      }).catchError((error) {
-        emit(ErrorChangeLangState());
-        print('error is ${error.toString()}');
-      });
-    }
+  Future<void> changeLang(BuildContext context) async {
+    final currentLang = lang;
+    final newLang = currentLang == 'en' ? 'ar' : 'en';
+    await CacheHelper.saveData(key: 'language', value: newLang);
+    lang = newLang;
+    languageDropdownSelectedItem = newLang == 'en' ? 'English' : 'عربي';
+    Intl.defaultLocale = newLang;
+    emit(ChangeLangState());
   }
 
   List<String> languageDropdownItems = ['English', 'عربي'];
   String? languageDropdownSelectedItem;
 
-  void onChangeLanguageDropdownButton(
-      {required value, required context, isFromChildHomeScaffold = false}) {
+  void onChangeLanguageDropdownButton({required String value}) {
     languageDropdownSelectedItem = value;
-    changeLang(context);
+    changeLang(cubitContext!);
     emit(OnChangeLanguageDropdownButtonState());
   }
 

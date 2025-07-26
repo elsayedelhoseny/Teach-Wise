@@ -1,5 +1,4 @@
 import 'package:clean_arch_flutter/core/constants/images.dart';
-import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

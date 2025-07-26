@@ -11,10 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'l10n/l10n.dart';
-import 'package:flutter_translate/flutter_translate.dart';
-
-late LocalizationDelegate delegate;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +19,7 @@ void main() async {
 
   DioHelper.init();
 
-  final locale = CacheHelper.getData(key: 'language') ?? 'ar';
   token = CacheHelper.getData(key: 'token') ?? '';
-
-  delegate = await LocalizationDelegate.create(
-    fallbackLocale: locale,
-    supportedLocales: ['ar', 'en'],
-  );
-  await delegate.changeLocale(Locale(locale));
 
   runApp(MyApp(
     appRouter: AppRouter(),
@@ -47,34 +36,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mainContext = context;
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(
             create: (BuildContext context) => GlobalCubit()..initVoid()),
         BlocProvider(create: (BuildContext context) => FormFieldCubit()),
       ],
-      child: BlocConsumer<GlobalCubit, GlobalStates>(
-        listener: (context, state) {},
+      child: BlocBuilder<GlobalCubit, GlobalStates>(
         builder: (context, state) {
-          return LocalizedApp(
-            delegate,
-            MaterialApp(
-              navigatorKey: navigatorKey,
-              debugShowCheckedModeBanner: false,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              locale: delegate.currentLocale,
-              supportedLocales: L10n.all,
-              theme: AppTheme.lightTheme,
-              darkTheme: AppTheme.darkTheme,
-              themeMode: context.watch<GlobalCubit>().themeMode,
-              onGenerateRoute: appRouter.onGenerateRoute,
-            ),
+          return MaterialApp(
+            navigatorKey: navigatorKey,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            locale: Locale(GlobalCubit.get(context).lang),
+            supportedLocales: const [Locale('ar'), Locale('en')],
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: context.watch<GlobalCubit>().themeMode,
+            onGenerateRoute: appRouter.onGenerateRoute,
           );
         },
       ),

@@ -186,5 +186,209 @@
   "studentRole": "Student",
   "@studentRole": {
     "description": "Label for the role option representing a student"
+  },
+  "are_you": "Are you",
+  "@are_you": {
+    "description": "Are you"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "enter_email": "Enter your email",
+  "@enter_email": {
+    "description": "Enter your email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "enter_password": "Enter your password",
+  "@enter_password": {
+    "description": "Enter your password"
+  },
+  "forgot_password": "Forgot password?",
+  "@forgot_password": {
+    "description": "Forgot password?"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "enter_full_name": "Enter full name",
+  "@enter_full_name": {
+    "description": "Enter full name"
+  },
+  "phone": "Phone number",
+  "@phone": {
+    "description": "Phone number"
+  },
+  "enter_phone": "Enter phone number",
+  "@enter_phone": {
+    "description": "Enter phone number"
+  },
+  "confirm_password": "Confirm password",
+  "@confirm_password": {
+    "description": "Confirm password"
+  },
+  "forgot_password_again": "Forgot password?",
+  "@forgot_password_again": {
+    "description": "Forgot password?"
+  },
+  "enter_email_to_restore_password": "Enter your email to restore password",
+  "@enter_email_to_restore_password": {
+    "description": "Enter your email to restore password"
+  },
+  "enter_verification_code": "Enter the verification code",
+  "@enter_verification_code": {
+    "description": "Enter the verification code"
+  },
+  "did_not_receive_code": "Didn’t receive a code? Resend",
+  "@did_not_receive_code": {
+    "description": "Didn’t receive a code? Resend"
+  },
+  "remember_password": "Remembered your password? Login",
+  "@remember_password": {
+    "description": "Remembered your password? Login"
+  },
+  "enter_new_password": "Enter new password",
+  "@enter_new_password": {
+    "description": "Enter new password"
+  },
+  "new_password": "New password",
+  "@new_password": {
+    "description": "New password"
+  },
+  "confirm_new_password": "Confirm new password",
+  "@confirm_new_password": {
+    "description": "Confirm new password"
+  },
+  "children": "Children",
+  "@children": {
+    "description": "Children"
+  },
+  "add_child": "Add child",
+  "@add_child": {
+    "description": "Add child"
+  },
+  "edit_data": "Edit data",
+  "@edit_data": {
+    "description": "Edit data"
+  },
+  "delete_child": "Delete child",
+  "@delete_child": {
+    "description": "Delete child"
+  },
+  "teachers": "Teachers",
+  "@teachers": {
+    "description": "Teachers"
+  },
+  "student_code": "Student code:",
+  "@student_code": {
+    "description": "Student code:"
+  },
+  "view_details": "View details",
+  "@view_details": {
+    "description": "View details"
+  },
+  "edit_child_data": "Edit child data",
+  "@edit_child_data": {
+    "description": "Edit child data"
+  },
+  "child_name": "Child name",
+  "@child_name": {
+    "description": "Child name"
+  },
+  "click_to_upload_image": "Click here to upload a profile image",
+  "@click_to_upload_image": {
+    "description": "Click here to upload a profile image"
+  },
+  "add_child_button": "Add child",
+  "@add_child_button": {
+    "description": "Add child"
+  },
+  "student_name": "Student name",
+  "@student_name": {
+    "description": "Student name"
+  },
+  "enter_student_name": "Enter student name",
+  "@enter_student_name": {
+    "description": "Enter student name"
+  },
+  "enter_child_password": "Enter child's password",
+  "@enter_child_password": {
+    "description": "Enter child's password"
+  },
+  "child_password": "Child's password",
+  "@child_password": {
+    "description": "Child's password"
+  },
+  "confirm_child_password": "Confirm child's password",
+  "@confirm_child_password": {
+    "description": "Confirm child's password"
+  },
+  "reenter_child_password": "Re-enter child's password",
+  "@reenter_child_password": {
+    "description": "Re-enter child's password"
+  },
+  "create": "Create",
+  "@create": {
+    "description": "Create"
+  },
+  "added_successfully": "Added successfully",
+  "@added_successfully": {
+    "description": "Added successfully"
+  },
+  "select_child": "Select child",
+  "@select_child": {
+    "description": "Select child"
+  },
+  "teacher_code": "Teacher code",
+  "@teacher_code": {
+    "description": "Teacher code"
+  },
+  "enter_student_code": "Enter student code",
+  "@enter_student_code": {
+    "description": "Enter student code"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add"
+  },
+  "change_password": "Change password",
+  "@change_password": {
+    "description": "Change password"
+  },
+  "change_password_anytime": "You can change your password anytime",
+  "@change_password_anytime": {
+    "description": "You can change your password anytime"
+  },
+  "edit_phone": "Edit phone number",
+  "@edit_phone": {
+    "description": "Edit phone number"
+  },
+  "edit_phone_anytime": "You can change your phone number anytime",
+  "@edit_phone_anytime": {
+    "description": "You can change your phone number anytime"
+  },
+  "delete_account": "Delete account",
+  "@delete_account": {
+    "description": "Delete account"
+  },
+  "delete_account_anytime": "You can delete your account anytime",
+  "@delete_account_anytime": {
+    "description": "You can delete your account anytime"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save"
+  },
+  "email_again": "Email",
+  "@email_again": {
+    "description": "Email"
   }
 }
