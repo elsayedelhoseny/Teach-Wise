@@ -1,56 +1,39 @@
-import 'package:clean_arch_flutter/business_logic/form_field_cubit/cubit.dart';
-import 'package:clean_arch_flutter/business_logic/form_field_cubit/states.dart';
-import 'package:clean_arch_flutter/core/constants/constants.dart';
-import 'package:clean_arch_flutter/core/styles/text_styles.dart';
-import 'package:clean_arch_flutter/core/widgets/default_text_form_field.dart';
+import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:clean_arch_flutter/core/widgets/app_text_form_field.dart';
+import 'package:clean_arch_flutter/core/constants/constants.dart';
 
-class ForgotFormFields extends StatefulWidget {
-  final TextEditingController emailController;
-  final Function(String)? onSubmit;
-
-  const ForgotFormFields({
+class ForgotFormField extends StatelessWidget {
+  const ForgotFormField({
     super.key,
-    required this.emailController,
-    this.onSubmit,
+    required this.controller,
   });
 
-  @override
-  State<ForgotFormFields> createState() => _ForgotFormFieldsState();
-}
-
-class _ForgotFormFieldsState extends State<ForgotFormFields> {
-  @override
-  void dispose() {
-    widget.emailController.clear();
-    super.dispose();
-  }
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<FormFieldCubit, FormFieldStates>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DefaultFormField(
-              controller: widget.emailController,
-              hintText: getLocalizedText().areYou,
-              keyboard: TextInputType.emailAddress,
-              validate: (value) {
-                if (value == null || value.isEmpty) {
-                  return getLocalizedText().areYou;
-                }
-                return null;
-              },
-              suffixWidget: const Icon(Icons.email_outlined),
-              onSubmit: widget.onSubmit,
-            ),
-          ],
-        );
-      },
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 32.0.w()),
+      child: AppTextFormField(
+        label: context.tr.email,
+        hintText: context.tr.enter_email,
+        keyboardType: TextInputType.emailAddress,
+        controller: controller,
+        validator: (value) {
+          if (value == null || value.trim().isEmpty) {
+            return context.tr.email_again;
+          } else if (!_isValidEmail(value.trim())) {
+            return context.tr.unacceptablePhoneNum;
+          }
+          return null;
+        },
+      ),
     );
+  }
+
+  bool _isValidEmail(String value) {
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$');
+    return emailRegex.hasMatch(value);
   }
 }

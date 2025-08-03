@@ -1,61 +1,54 @@
-import 'package:clean_arch_flutter/core/widgets/default_platform_loading_indicator.dart';
-import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/forgot_password/presentation/manger/forgot_password_cubit.dart';
-import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/forgot_password/presentation/manger/forgot_password_state.dart';
+import 'package:clean_arch_flutter/core/constants/constants.dart';
+import 'package:clean_arch_flutter/core/constants/responsive.dart';
+import 'package:clean_arch_flutter/core/styles/colors.dart';
+import 'package:clean_arch_flutter/core/widgets/default_button.dart';
+import 'package:clean_arch_flutter/core/widgets/question_title.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/forgot_password/presentation/views/widgets/forgot_form_fields.dart';
-import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/forgot_password/verify_code/presentation/views/verify_code_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../Auth/presentation/Login/manger/login_states.dart';
 
-class ForgotPasswordViewBody extends StatelessWidget {
-  final TextEditingController emailController;
-  final GlobalKey<FormState> formKey;
+class ForgotPasswordViewBody extends StatefulWidget {
+  const ForgotPasswordViewBody({super.key});
 
-  const ForgotPasswordViewBody({
-    super.key,
-    required this.emailController,
-    required this.formKey,
-  });
+  @override
+  State<ForgotPasswordViewBody> createState() => _ForgotPasswordViewBodyState();
+}
+
+class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
+  final TextEditingController controller = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ForgotPasswordCubit(),
-      child: BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
-        listener: (context, state) {
-          if (state is ForgotPasswordSuccess) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => VerifyCodeScreen(email: emailController.text),
-              ),
-            );
-          } else if (state is ForgotPasswordFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
-            );
-          }
-        },
-        builder: (context, state) {
-          return Form(
-            key: formKey,
-            child: Column(
-              children: [
-                ForgotFormFields(
-                  emailController: emailController,
-                  onSubmit: (p0) {
-                    if (formKey.currentState!.validate()) {
-                      context
-                          .read<ForgotPasswordCubit>()
-                          .sendResetCode(email: emailController.text);
-                    }
-                  },
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          );
-        },
+    return Form(
+      key: formKey,
+      child: Column(
+        children: [
+          QuestionTitle(
+            isForgetScreen: true,
+            subTitle: 'أدخل البريد الالكتروني  لاستعادة كلمة المرور',
+            title: 'نسيت كلمة المرور؟',
+          ),
+          ForgotFormField(controller: controller),
+          32.verticalSB(),
+          DefaultButton(
+            horizontalMarge: 32.0.w(),
+            text: context.tr.confirm,
+            colortxt: isDarkMode()
+                ? AppColors.darkTextPrimary
+                : AppColors.textPrimary,
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                debugPrint('Email is valid: ${controller.text}');
+              }
+            },
+          ),
+        ],
       ),
     );
   }

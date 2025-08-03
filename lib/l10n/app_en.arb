@@ -387,6 +387,10 @@
   "@save": {
     "description": "Save"
   },
+  "passwords_do_not_match": "Passwords do not match",
+  "@passwords_do_not_match": {
+    "description": "Error message when password and confirmation do not match"
+  },
   "email_again": "Email",
   "@email_again": {
     "description": "Email"

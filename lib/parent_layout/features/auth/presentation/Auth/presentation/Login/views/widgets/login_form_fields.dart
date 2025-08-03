@@ -7,12 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 
 class LoginFormFields extends StatefulWidget {
-  const LoginFormFields(
-      {super.key,
-      required this.emailController,
-      required this.passwordController});
+  const LoginFormFields({
+    super.key,
+    required this.emailController,
+    required this.passwordController,
+  });
+
   final TextEditingController emailController;
   final TextEditingController passwordController;
+
   @override
   State<LoginFormFields> createState() => _LoginFormFieldsState();
 }
@@ -25,24 +28,24 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
     return Column(
       children: [
         AppTextFormField(
-          label: 'البريد الالكتروني',
-          hintText: 'ادخل البريد الالكتروني',
+          label: context.tr.email,
+          hintText: context.tr.enter_email,
           keyboardType: TextInputType.emailAddress,
           controller: widget.emailController,
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'البريد الإلكتروني مطلوب';
-            } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
+              return context.tr.email_again;
+            } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$')
                 .hasMatch(value)) {
-              return 'البريد الإلكتروني غير صالح';
+              return context.tr.unacceptablePhoneNum;
             }
             return null;
           },
         ),
         10.verticalSB(),
         AppTextFormField(
-          label: 'كلمة المرور',
-          hintText: 'ادخل كلمة المرور',
+          label: context.tr.password,
+          hintText: context.tr.enter_password,
           keyboardType: TextInputType.visiblePassword,
           controller: widget.passwordController,
           isPassword: !isPasswordVisible,
@@ -56,9 +59,9 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
           },
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'كلمة المرور مطلوبة';
+              return context.tr.password;
             } else if (value.length < 6) {
-              return 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+              return context.tr.eightCharacterPassword;
             }
             return null;
           },
@@ -68,14 +71,16 @@ class _LoginFormFieldsState extends State<LoginFormFields> {
           alignment: AlignmentDirectional.centerStart,
           child: ClickableAnimation(
             onPressed: () {},
-            child: Text("هل نسيت كلمة المرور؟",
-                style: AppTextStyles.text14Regular(
-                  color: isDarkMode()
-                      ? AppColors.darkPrimary
-                      : AppColors.darkPrimary,
-                ).copyWith(
-                  decoration: TextDecoration.underline,
-                )),
+            child: Text(
+              context.tr.forgot_password,
+              style: AppTextStyles.text14Regular(
+                color: isDarkMode()
+                    ? AppColors.darkPrimary
+                    : AppColors.darkPrimary,
+              ).copyWith(
+                decoration: TextDecoration.underline,
+              ),
+            ),
           ),
         ),
       ],

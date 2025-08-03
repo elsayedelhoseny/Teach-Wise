@@ -64,56 +64,7 @@ class FormFieldCubit extends Cubit<FormFieldStates> {
     });
   }
 
-  bool isPasswordAsRequested(
-      {required String value, required FormFieldStates state}) {
-    if (value.length >= 8 &&
-        uppercaseRegex.hasMatch(value) &&
-        lowercaseRegex.hasMatch(value) &&
-        digitRegex.hasMatch(value) &&
-        specialCharRegex.hasMatch(value)) {
-      if (state is! SuccessFieldState) {
-        emit(SuccessFieldState());
-      }
-      return true;
-    }
-    emit(ErrorFieldState());
-    return false;
-  }
-
-  String passwordValidateMsg({
-    required value,
-  }) {
-    return '${value.length < 8 ? getLocalizedText().eightCharacterPassword : ''}'
-        '${!uppercaseRegex.hasMatch(value) ? getLocalizedText().upperCasePassword : ''}'
-        '${!lowercaseRegex.hasMatch(value) ? getLocalizedText().lowerCasePassword : ''}'
-        '${!digitRegex.hasMatch(value) ? getLocalizedText().numberPassword : ''}'
-        '${!specialCharRegex.hasMatch(value) ? getLocalizedText().specialCharacterPassword : ''}';
-  }
-
   bool passwordFormError = false;
-
-  String? registerPassFieldValidate({
-    required FormFieldStates state,
-    required String? value,
-    required context,
-  }) {
-    if (state is! SuccessFieldState || value!.isEmpty) {
-      passwordFormError = true;
-    } else {
-      if (passwordFormError) {
-        if (isPasswordAsRequested(value: value, state: state)) {
-          passwordFormError = false;
-          emit(SuccessFieldState());
-        } else {
-          passwordFormError = true;
-        }
-      }
-    }
-    if (!isPasswordAsRequested(value: value!, state: state)) {
-      return passwordValidateMsg(value: value);
-    }
-    return null;
-  }
 
   void onChangeState() {
     emit(OnChangeFieldState());

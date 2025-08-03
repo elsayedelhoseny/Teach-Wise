@@ -14,47 +14,30 @@ String? registerCountry;
 String? phoneNumberField;
 String? errorResponse;
 
-bool validatePhoneNumber(String value) {
-  if (uppercaseRegex.hasMatch(value) == false &&
-      lowercaseRegex.hasMatch(value) == false &&
-      specialCharRegex.hasMatch(value) == false) {
-    return false;
-  }
-  return true;
-}
-
-bool passwordValidator(String value) {
-  if (value.length >= 8 == true &&
-      uppercaseRegex.hasMatch(value) == true &&
-      lowercaseRegex.hasMatch(value) == true &&
-      digitRegex.hasMatch(value) == true &&
-      specialCharRegex.hasMatch(value) == true) {
-    return false;
-  }
-  return true;
-}
-
-String passwordValidateMsg({
-  required value,
-}) {
-  return '${value.length < 8 ? getLocalizedText().eightCharacterPassword : ''}'
-      '${!uppercaseRegex.hasMatch(value) ? getLocalizedText().upperCasePassword : ''}'
-      '${!lowercaseRegex.hasMatch(value) ? getLocalizedText().lowerCasePassword : ''}'
-      '${!digitRegex.hasMatch(value) ? getLocalizedText().numberPassword : ''}'
-      '${!specialCharRegex.hasMatch(value) ? getLocalizedText().specialCharacterPassword : ''}';
-}
-
-final RegExp uppercaseRegex = RegExp(r'[A-Z]');
-final RegExp lowercaseRegex = RegExp(r'[a-z]');
-final RegExp digitRegex = RegExp(r'[0-9]');
-final RegExp specialCharRegex = RegExp(r'[!@$&*~]');
-
-AppLocalizations getLocalizedText() {
-  return AppLocalizations.of(navigatorKey.currentContext ?? mainContext)!;
-}
+bool? isOnboardingNotCompleted;
+bool? isPinCodeExists;
+bool? isDnsServerAvailable;
+bool? isPinLoginRequired;
+bool? isNormalLoginRequired;
 
 late AnimationController defaultFormFieldAnimationController;
 
 bool isArab() {
-  return getLocalizedText().localeName == "ar";
+  return navigatorKey.currentContext!.tr.localeName == "ar";
+}
+
+extension Translate on BuildContext {
+  AppLocalizations get tr => AppLocalizations.of(this)!;
+}
+
+bool isTablet() {
+  final width =
+      MediaQuery.of(navigatorKey.currentContext ?? mainContext).size.width;
+  return width >= 600 && width < 1024;
+}
+
+extension ContextExtensions on BuildContext {
+  bool get isTablet {
+    return MediaQuery.sizeOf(navigatorKey.currentContext!).width >= 600;
+  }
 }

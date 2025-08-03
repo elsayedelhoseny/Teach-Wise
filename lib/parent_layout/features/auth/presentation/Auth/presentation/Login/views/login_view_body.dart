@@ -1,3 +1,4 @@
+import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/widgets/default_button.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/Auth/presentation/Login/manger/login_cubit.dart';
@@ -43,7 +44,7 @@ class LoginViewBody extends StatelessWidget {
                   state is LoginLoading
                       ? const CircularProgressIndicator()
                       : DefaultButton(
-                          text: 'تسجيل',
+                          text: context.tr.register,
                           onTap: () {
                             if (formKey.currentState!.validate()) {
                               context.read<LoginCubit>().userLogin(

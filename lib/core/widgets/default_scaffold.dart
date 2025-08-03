@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/widgets/default_appbar.dart';
-import 'package:clean_arch_flutter/core/widgets/default_no_Internet.dart';
+import 'package:clean_arch_flutter/core/widgets/default_no_internet.dart';
 import 'package:clean_arch_flutter/core/widgets/navigate_finish.dart';
 import 'package:clean_arch_flutter/parent_layout/features/drawer/presentation/manger/drawer_cubit.dart';
 import 'package:clean_arch_flutter/parent_layout/features/drawer/presentation/views/drawer_view.dart';
@@ -53,15 +53,15 @@ class DefaultScaffold extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          getLocalizedText().doyouwanttoexit,
+          context.tr.doyouwanttoexit,
         ),
         content: Text(
-          getLocalizedText().areyousure,
+          context.tr.areyousure,
         ),
         actions: <Widget>[
           TextButton(
             child: Text(
-              getLocalizedText().no,
+              context.tr.no,
             ),
             onPressed: () {
               Navigator.of(context).pop();
@@ -69,7 +69,7 @@ class DefaultScaffold extends StatelessWidget {
           ),
           TextButton(
             child: Text(
-              getLocalizedText().yes,
+              context.tr.yes,
             ),
             onPressed: () {
               Future.delayed(const Duration(milliseconds: 200), () {

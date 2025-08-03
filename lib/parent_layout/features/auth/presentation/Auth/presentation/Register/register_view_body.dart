@@ -1,3 +1,4 @@
+import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/widgets/default_button.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/Auth/presentation/Register/manger/register_cubit.dart';
@@ -50,7 +51,7 @@ class RegisterViewBody extends StatelessWidget {
                   state is RegisterLoading
                       ? const CircularProgressIndicator()
                       : DefaultButton(
-                          text: 'تسجيل حساب',
+                          text: context.tr.register,
                           onTap: () {
                             if (formKey.currentState!.validate()) {
                               context.read<RegisterCubit>().userRegister(

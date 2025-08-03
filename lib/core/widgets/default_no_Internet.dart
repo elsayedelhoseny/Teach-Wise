@@ -15,14 +15,14 @@ Widget noInternet(BuildContext context) {
           Container(
             margin: const EdgeInsets.only(top: 20, bottom: 10),
             child: Text(
-              getLocalizedText().noInternetconnection,
+              context.tr.noInternetconnection,
               style: const TextStyle(fontSize: 14),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(bottom: 20),
             child: Text(
-              getLocalizedText().checkyourconnection,
+              context.tr.checkyourconnection,
               style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ),

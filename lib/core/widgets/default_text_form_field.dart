@@ -96,9 +96,8 @@ class DefaultFormField extends StatelessWidget {
           child: TextFormField(
             autofocus: autofocus,
             focusNode: focusNode,
-            textAlign: getLocalizedText().localeName == 'ar'
-                ? TextAlign.end
-                : TextAlign.start,
+            textAlign:
+                context.tr.localeName == 'ar' ? TextAlign.end : TextAlign.start,
             textDirection: TextDirection.ltr,
             style: formTextStyle ??
                 AppTextStyles.text16Regular(
@@ -161,8 +160,7 @@ class DefaultFormField extends StatelessWidget {
                     ? AppColors.darkTextSecondary
                     : AppColors.textSecondary,
                 fontFamily: 'noto',
-                fontSize:
-                    getLocalizedText().localeName == 'ar' ? 20.w() : 22.w(),
+                fontSize: context.tr.localeName == 'ar' ? 20.w() : 22.w(),
               ),
               alignLabelWithHint: true,
               prefixIcon: enablePrefix

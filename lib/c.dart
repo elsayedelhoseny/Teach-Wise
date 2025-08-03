@@ -42,6 +42,8 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class UserScreen extends StatelessWidget {
+  const UserScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -54,6 +56,8 @@ class UserScreen extends StatelessWidget {
 }
 
 class AddScreen extends StatelessWidget {
+  const AddScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -66,6 +70,8 @@ class AddScreen extends StatelessWidget {
 }
 
 class HomeMainScreen extends StatelessWidget {
+  const HomeMainScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(

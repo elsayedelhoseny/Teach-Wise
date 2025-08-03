@@ -39,11 +39,6 @@ class DefaultPhoneNumFormField extends StatelessWidget {
           textAlign: TextAlign.start,
           spaceBetweenSelectorAndTextField: 5.w(),
           validator: (String? value) {
-            if (validatePhoneNumber(value!)) {
-              return getLocalizedText().unacceptablePhoneNum;
-            } else if (value.isEmpty) {
-              return getLocalizedText().phoneFieldEmpty;
-            }
             return null;
           },
           onInputChanged: (PhoneNumber number) {
@@ -114,7 +109,7 @@ class DefaultPhoneNumFormField extends StatelessWidget {
                 fontFamily: 'BalooBhaijaan',
                 color: AppColors.gray),
             label: label != null
-                ? getLocalizedText().localeName == 'ar'
+                ? context.tr.localeName == 'ar'
                     ? Padding(
                         padding: EdgeInsetsDirectional.only(end: 10.w()),
                         child: Row(

@@ -1,3 +1,4 @@
+import 'package:clean_arch_flutter/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/widgets/app_text_form_field.dart';
@@ -31,51 +32,51 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
     return Column(
       children: [
         AppTextFormField(
-          label: 'الاسم الكامل',
-          hintText: 'ادخل الاسم',
+          label: context.tr.enter_full_name,
+          hintText: context.tr.enter_full_name,
           controller: widget.nameController,
           validator: (value) {
             if (value == null || value.trim().isEmpty) {
-              return 'الاسم مطلوب';
+              return context.tr.enter_full_name;
             }
             return null;
           },
         ),
         4.verticalSB(),
         AppTextFormField(
-          label: 'رقم الهاتف',
-          hintText: 'ادخل رقم الهاتف',
+          label: context.tr.phone,
+          hintText: context.tr.enter_phone,
           keyboardType: TextInputType.phone,
           controller: widget.phoneController,
           validator: (value) {
             if (value == null || value.trim().isEmpty) {
-              return 'رقم الهاتف مطلوب';
+              return context.tr.phoneFieldEmpty;
             } else if (!RegExp(r'^[0-9]{10,15}$').hasMatch(value)) {
-              return 'رقم الهاتف غير صالح';
+              return context.tr.unacceptablePhoneNum;
             }
             return null;
           },
         ),
         4.verticalSB(),
         AppTextFormField(
-          label: 'البريد الالكتروني',
-          hintText: 'ادخل البريد الالكتروني',
+          label: context.tr.email,
+          hintText: context.tr.enter_email,
           keyboardType: TextInputType.emailAddress,
           controller: widget.emailController,
           validator: (value) {
             if (value == null || value.trim().isEmpty) {
-              return 'البريد الإلكتروني مطلوب';
+              return context.tr.email_again;
             } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$')
                 .hasMatch(value)) {
-              return 'البريد الإلكتروني غير صالح';
+              return context.tr.unacceptablePhoneNum;
             }
             return null;
           },
         ),
         4.verticalSB(),
         AppTextFormField(
-          label: 'كلمة المرور',
-          hintText: 'ادخل كلمة المرور',
+          label: context.tr.password,
+          hintText: context.tr.enter_password,
           controller: widget.passwordController,
           isPassword: !isPasswordVisible,
           enableSuffix: true,
@@ -88,17 +89,17 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
           },
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'كلمة المرور مطلوبة';
+              return context.tr.password;
             } else if (value.length < 6) {
-              return 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+              return context.tr.eightCharacterPassword;
             }
             return null;
           },
         ),
         4.verticalSB(),
         AppTextFormField(
-          label: 'تأكيد كلمة المرور',
-          hintText: 'اعد كتابة كلمة المرور',
+          label: context.tr.confirm_password,
+          hintText: context.tr.reenter_child_password,
           controller: widget.confirmPasswordController,
           isPassword: !isConfirmPasswordVisible,
           enableSuffix: true,
@@ -112,9 +113,9 @@ class _RegisterFormFieldsState extends State<RegisterFormFields> {
           },
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'تأكيد كلمة المرور مطلوب';
+              return context.tr.confirm_password;
             } else if (value != widget.passwordController.text) {
-              return 'كلمتا المرور غير متطابقتين';
+              return context.tr.passwords_do_not_match;
             }
             return null;
           },

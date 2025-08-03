@@ -1,5 +1,3 @@
-import 'package:clean_arch_flutter/c.dart';
-import 'package:clean_arch_flutter/parent_layout/features/Home/presentation/views/home_screen.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/Auth/presentation/Login/manger/login_cubit.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/Auth/presentation/Login/views/login_view_body.dart';
 import 'package:clean_arch_flutter/parent_layout/features/auth/presentation/Auth/presentation/Register/manger/register_cubit.dart';

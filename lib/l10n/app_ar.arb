@@ -93,5 +93,7 @@
   "delete_account": "حذف الحساب",
   "delete_account_anytime": "يمكنك حذف حسابك في أي وقت",
    "save": "حفظ",
-  "email_again": "البريد الالكتروني"
+  "email_again": "البريد الالكتروني",
+  "passwords_do_not_match": "كلمتا المرور غير متطابقتين"
+
 }

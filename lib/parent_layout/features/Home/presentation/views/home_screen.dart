@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(getLocalizedText().areYou),
+        title: Text(context.tr.areYou),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
