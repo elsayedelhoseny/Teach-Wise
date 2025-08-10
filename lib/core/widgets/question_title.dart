@@ -25,7 +25,7 @@ class QuestionTitle extends StatelessWidget {
         children: [
           PositionedDirectional(
             top: 112.h(),
-            end: isForgetScreen ? 235.w() : 212.w(),
+            end: isForgetScreen ? 260.w() : 212.w(),
             child: Container(
               width: 31.w(),
               height: 18.h(),
@@ -46,7 +46,7 @@ class QuestionTitle extends StatelessWidget {
           ),
           PositionedDirectional(
             top: isForgetScreen ? 101.h() : 100.h(),
-            end: isForgetScreen ? 107.w() : 160.w(),
+            end: isForgetScreen ? 95.w() : 160.w(),
             child: Text(
               title,
               style: isForgetScreen

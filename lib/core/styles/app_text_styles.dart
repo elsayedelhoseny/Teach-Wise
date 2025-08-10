@@ -1,7 +1,7 @@
-import 'package:clean_arch_flutter/core/constants/constants.dart';
-import 'package:clean_arch_flutter/core/constants/responsive.dart';
-import 'package:clean_arch_flutter/core/styles/colors.dart';
+import '../constants/responsive.dart';
 import 'package:flutter/material.dart';
+import '../constants/constants.dart';
+import 'colors.dart';
 
 abstract class AppTextStyles {
   static TextStyle _baseStyle(double size, FontWeight weight, {Color? color}) {

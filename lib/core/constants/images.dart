@@ -8,4 +8,5 @@ const icgraduation = 'assets/images/graduation.png';
 const icfather = 'assets/images/father.png';
 const icedit = 'assets/images/edit.png';
 const ictrash = 'assets/images/trash.png';
+const icStudentGraduation = 'assets/images/student_graduation.png';
 const icimageupload = 'assets/images/image-upload.png';

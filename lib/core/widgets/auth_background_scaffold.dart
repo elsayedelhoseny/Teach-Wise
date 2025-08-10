@@ -3,6 +3,8 @@ import 'package:clean_arch_flutter/core/constants/responsive.dart';
 import 'package:clean_arch_flutter/core/styles/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../constants/images.dart';
+
 class AuthBackgroundScaffold extends StatelessWidget {
   const AuthBackgroundScaffold({
     super.key,
@@ -78,7 +80,7 @@ class _BottomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: isDarkMode() ? Color(0xff070B16) : Color(0xffFFFFFF),
+        color: isDarkMode() ? AppColors.darkBackground : AppColors.background,
         borderRadius: BorderRadius.vertical(top: Radius.circular(radius)),
         boxShadow: const [
           BoxShadow(
@@ -99,7 +101,7 @@ class _StudentWelcomeImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/images/student_graduation.png.png',
+      icStudentGraduation,
       width: 265.w(),
       height: 200.h(),
     );

@@ -100,16 +100,12 @@ class ProfileCardOption extends StatelessWidget {
                           Image.asset(icedit, width: 12.w(), height: 12.h()),
                           8.horizontalSB(),
                           Text(
-                            'تعديل البيانات',
+                            context.tr.edit_data,
                             style: AppTextStyles.text16Regular(),
                           ),
                         ],
                       ),
                     ),
-                  // if (onEdit != null && onDelete != null)
-                  //   const PopupMenuDivider(
-
-                  //   ),
                   if (onDelete != null)
                     PopupMenuItem(
                       value: 'delete',
@@ -118,7 +114,7 @@ class ProfileCardOption extends StatelessWidget {
                           Image.asset(ictrash, width: 12.w(), height: 12.h()),
                           8.horizontalSB(),
                           Text(
-                            'حذف الابن',
+                            context.tr.delete_child,
                             style: AppTextStyles.text16Regular(),
                           ),
                         ],

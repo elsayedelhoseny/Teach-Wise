@@ -1,7 +1,8 @@
-import 'package:clean_arch_flutter/core/styles/app_text_styles.dart';
+import '../constants/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:clean_arch_flutter/core/constants/constants.dart';
-import 'package:clean_arch_flutter/core/styles/colors.dart';
+import '../constants/constants.dart';
+import '../styles/app_text_styles.dart';
+import '../styles/colors.dart';
 
 class TeacherCard extends StatelessWidget {
   final String teacherName;
@@ -36,7 +37,7 @@ class TeacherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cardBackgroundColor = backgroundColor ??
-        (isDarkMode() ? AppColors.darkSurface : AppColors.surface);
+        (isDarkMode() ? AppColors.darkSurface : AppColors.gray);
     final primaryTextColor = textColor ??
         (isDarkMode() ? AppColors.darkTextPrimary : AppColors.textPrimary);
     final secondaryTextColor = subtitleColor ??
@@ -45,84 +46,75 @@ class TeacherCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsetsDirectional.all(8),
+        width: 327.w(),
         decoration: BoxDecoration(
           color: cardBackgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
-          boxShadow: [
-            BoxShadow(
-              color:
-                  (isDarkMode() ? Colors.black : Colors.grey).withOpacity(0.2),
-              blurRadius: 8,
-              offset: const Offset(0, 4),
-            ),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
-                  radius: 30,
+                  radius: 22,
                   backgroundImage: NetworkImage(imageUrl),
-                  backgroundColor:
-                      isDarkMode() ? AppColors.darkBorder : AppColors.border,
                 ),
-                const SizedBox(width: 12),
+                7.horizontalSB(),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        teacherName,
-                        style: AppTextStyles.text18SemiBold(
-                            color: primaryTextColor),
-                        textDirection: TextDirection.rtl,
+                      Row(
+                        children: [
+                          Text(
+                            teacherName,
+                            style: AppTextStyles.text18SemiBold(
+                                color: primaryTextColor),
+                            textDirection: TextDirection.rtl,
+                          ),
+                          4.horizontalSB(),
+                          Text(
+                            subject,
+                            style: AppTextStyles.text14Regular(
+                                color: secondaryTextColor),
+                            textDirection: TextDirection.rtl,
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        subject,
-                        style: AppTextStyles.text14Regular(
-                            color: secondaryTextColor),
-                        textDirection: TextDirection.rtl,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: List.generate(maxStars, (index) {
+                          return Icon(
+                            index < rating ? Icons.star : Icons.star_border,
+                            color: Colors.yellow[600],
+                            size: 10,
+                          );
+                        }),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: List.generate(maxStars, (index) {
-                return Icon(
-                  index < rating ? Icons.star : Icons.star_border,
-                  color: Colors.yellow[600],
-                  size: 24,
-                );
-              }),
-            ),
-            const SizedBox(height: 16),
+            12.verticalSB(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
-                    Text(
-                      ":كود الطالب",
-                      style: TextStyle(
-                        color: secondaryTextColor,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
+                    Text(context.tr.student_code,
+                        style: AppTextStyles.text12Regular(
+                            color: secondaryTextColor)),
+                    4.horizontalSB(),
                     Text(
                       studentCode,
-                      style: TextStyle(
-                        color: primaryTextColor,
-                        fontSize: 16,
+                      style:
+                          AppTextStyles.text14Regular(color: primaryTextColor)
+                              .copyWith(
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -131,11 +123,10 @@ class TeacherCard extends StatelessWidget {
                 GestureDetector(
                   onTap: onViewDetails,
                   child: Text(
-                    "عرض التفاصيل",
-                    style: TextStyle(
-                      color: const Color(0xFF6366F1),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                    context.tr.view_details,
+                    style: AppTextStyles.text14Regular(color: AppColors.primary)
+                        .copyWith(
+                      decoration: TextDecoration.underline,
                     ),
                   ),
                 ),

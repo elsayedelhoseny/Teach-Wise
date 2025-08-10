@@ -57,7 +57,7 @@ class CustomNavBar extends StatelessWidget {
       child: Container(
         height: 90.h(),
         decoration: BoxDecoration(
-          color: isDarkMode() ? Color(0xFF0F0F23) : Colors.white,
+          color: isDarkMode() ? Color(0xFF0F0F23) : AppColors.inputBackground,
           borderRadius: BorderRadius.circular(32),
         ),
         padding: EdgeInsets.symmetric(horizontal: 32.w()),
@@ -118,7 +118,9 @@ class CustomNavBar extends StatelessWidget {
                 icon,
                 width: 24.w(),
                 height: 24.h(),
-                color: isDarkMode() ? Colors.white : Colors.black,
+                color: isDarkMode()
+                    ? AppColors.inputBackground
+                    : AppColors.darkInputBackground,
               )),
           14.verticalSB(),
           _buildIndicator(isSelected)
@@ -141,7 +143,7 @@ class CustomNavBar extends StatelessWidget {
               width: 22.w(),
               height: 4.4.h(),
               decoration: BoxDecoration(
-                color: Color(0xFF9C27B0),
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
@@ -152,7 +154,7 @@ class CustomNavBar extends StatelessWidget {
               width: 12.w(),
               height: 9.h(),
               decoration: BoxDecoration(
-                color: Color(0xFF9C27B0),
+                color: AppColors.primary,
                 shape: BoxShape.circle,
               ),
             ),

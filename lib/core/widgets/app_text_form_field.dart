@@ -1,9 +1,9 @@
-import 'package:clean_arch_flutter/core/constants/constants.dart';
-import 'package:clean_arch_flutter/core/styles/app_text_styles.dart';
-import 'package:clean_arch_flutter/core/styles/colors.dart';
-import 'package:clean_arch_flutter/core/widgets/default_text_form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:clean_arch_flutter/core/constants/responsive.dart';
+import '../constants/constants.dart';
+import '../constants/responsive.dart';
+import '../styles/app_text_styles.dart';
+import '../styles/colors.dart';
+import 'default_text_form_field.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String label;

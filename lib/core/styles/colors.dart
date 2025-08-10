@@ -22,6 +22,12 @@ abstract class AppColors {
   static const Color warning = Color(0xFFFFC107);
   static const Color error = Color(0xFFF44336);
 
+  /// PIN Input Colors (Light)
+  static const Color pinBoxLight = Color(0xFF085550);
+  static const Color pinBorderLight = Colors.transparent;
+  static const Color pinFocusedBorderLight = primary;
+  static const Color pinTextLight = Colors.black;
+
   /// ---------------------
   /// Dark Theme
   /// ---------------------
@@ -44,6 +50,15 @@ abstract class AppColors {
   static const Color darkWarning = Color(0xFFFFCA28);
   static const Color darkError = Color(0xFFEF5350);
 
+  /// PIN Input Colors (Dark)
+  static const Color pinBoxDark = Color(0xFF0D1325);
+  static const Color pinBorderDark = Colors.transparent;
+  static const Color pinFocusedBorderDark = darkPrimary;
+  static const Color pinTextDark = Colors.white;
+
+  /// ---------------------
+  /// Gradients
+  /// ---------------------
   static const Gradient buttonGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

@@ -30,7 +30,7 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
           padding: EdgeInsetsDirectional.symmetric(
               horizontal: 8.w(), vertical: 6.h()),
           decoration: BoxDecoration(
-            color: isDarkMode() ? const Color(0xFF0D1325) : AppColors.gray,
+            color: isDarkMode() ? AppColors.darkSurface : AppColors.gray,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -54,7 +54,9 @@ class _CustomTabSwitcherState extends State<CustomTabSwitcher> {
                   child: Text(
                     widget.tabs[reversedIndex].title,
                     style: AppTextStyles.text16Medium().copyWith(
-                        color: isDarkMode() ? Colors.white : Colors.black),
+                        color: isDarkMode()
+                            ? AppColors.inputBackground
+                            : AppColors.darkInputBackground),
                   ),
                 ),
               );

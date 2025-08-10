@@ -15,6 +15,14 @@
   "@check": {
     "description": "Check"
   },
+  "enter_code_again": "Please enter the code again",
+  "@enter_code_again": {
+    "description": "Shown when the input is empty, prompting the user to re-enter the code"
+  },
+  "enter_passcode_4_chars": "Enter the 4-character passcode",
+  "@enter_passcode_4_chars": {
+    "description": "Prompt asking the user to enter a passcode consisting of exactly 4 characters"
+  },
   "pleaseEnterYourCurrentPassword": "pleaseEnterYourCurrentPassword",
   "@pleaseEnterYourCurrentPassword": {
     "description": "Please enter your current password"
@@ -54,6 +62,14 @@
   "offLine": "Offline",
   "@offLine": {
     "description": "Offline"
+  },
+  "resend": "Resend",
+  "@resend": {
+    "description": "Button to resend the code or message"
+  },
+  "code_must_be_4_digits": "Code must be exactly 4 digits",
+  "@code_must_be_4_digits": {
+    "description": "Validation message when the entered code length is less than 4 digits"
   },
   "createVerificationCode": "Create verification code",
   "@createVerificationCode": {
